@@ -50,7 +50,9 @@
       @endif
     </div>
     <div class="main">
-      <div class="filter">Du plus petit au plus grand</div>
+      <div class="filter">
+          <p><b>Prix croissant</b><i class="fas fa-chevron-circle-down"></i></p>
+        </div>
       <div class="center">
         <div class="consoles">
           <h2>Plateformes</h2>
@@ -80,81 +82,6 @@
           </div>
         </div>
         <div class="games">
-          <div class="game">
-            <img src="images/game.png" alt="jeu" />
-            <p><b>Hellblade: Senua's Sacrifice</b></p>
-            <p>30,00€</p>
-          </div>
-          <div class="game">
-            <img src="images/game.png" alt="jeu" />
-            <p><b>Nom du jeu</b></p>
-            <p>00,00€</p>
-          </div>
-          <div class="game">
-            <img src="images/game.png" alt="jeu" />
-            <p><b>Nom du jeu</b></p>
-            <p>00,00€</p>
-          </div>
-          <div class="game">
-            <img src="images/game.png" alt="jeu" />
-            <p><b>Nom du jeu</b></p>
-            <p>00,00€</p>
-          </div>
-          <div class="game">
-            <img src="images/game.png" alt="jeu" />
-            <p><b>Hellblade: Senua's Sacrifice</b></p>
-            <p>30,00€</p>
-          </div>
-          <div class="game">
-            <img src="images/game.png" alt="jeu" />
-            <p><b>Nom du jeu</b></p>
-            <p>00,00€</p>
-          </div>
-          <div class="game">
-            <img src="images/game.png" alt="jeu" />
-            <p><b>Nom du jeu</b></p>
-            <p>00,00€</p>
-          </div>
-          <div class="game">
-            <img src="images/game.png" alt="jeu" />
-            <p><b>Nom du jeu</b></p>
-            <p>00,00€</p>
-          </div>
-          <div class="game">
-            <img src="images/game.png" alt="jeu" />
-            <p><b>Hellblade: Senua's Sacrifice</b></p>
-            <p>30,00€</p>
-          </div>
-          <div class="game">
-            <img src="images/game.png" alt="jeu" />
-            <p><b>Nom du jeu</b></p>
-            <p>00,00€</p>
-          </div>
-          <div class="game">
-            <img src="images/game.png" alt="jeu" />
-            <p><b>Nom du jeu</b></p>
-            <p>00,00€</p>
-          </div>
-          <div class="game">
-            <img src="images/game.png" alt="jeu" />
-            <p><b>Nom du jeu</b></p>
-            <p>00,00€</p>
-          </div>
-          <div class="game">
-            <img src="images/game.png" alt="jeu" />
-            <p><b>Hellblade: Senua's Sacrifice</b></p>
-            <p>30,00€</p>
-          </div>
-          <div class="game">
-            <img src="images/game.png" alt="jeu" />
-            <p><b>Nom du jeu</b></p>
-            <p>00,00€</p>
-          </div>
-          <div class="game">
-            <img src="images/game.png" alt="jeu" />
-            <p><b>Nom du jeu</b></p>
-            <p>00,00€</p>
-          </div>
           <div class="game">
             <img src="images/game.png" alt="jeu" />
             <p><b>Nom du jeu</b></p>
