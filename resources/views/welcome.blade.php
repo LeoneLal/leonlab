@@ -86,7 +86,7 @@
             <img src="images/game.png" alt="jeu" />
             <p><b>Nom du jeu</b></p>
             <p>00,00€</p>
-          </div>
+          </div>         
         </div>
       </div>
       <div class="pages">
