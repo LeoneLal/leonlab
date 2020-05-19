@@ -3,18 +3,15 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Jeu;
+use App\Console;
 
 class JeuxController extends Controller
 {
-    protected $table="jeux";
 
-    protected $fillable=[
-        'id', 
-        'nom', 
-        'description', 
-        'photo', 
-        'prix',
-        'avis',
-        'note'
-    ];
+    public function index(){
+        $consoles = Console::all();
+        $jeux = Jeu::all();
+        return view('welcome', compact('consoles', 'jeux'));
+    }
 }
