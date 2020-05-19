@@ -55,38 +55,24 @@
         </div>
       <div class="center">
         <div class="consoles">
-          <h2>Plateformes</h2>
+        <h2>Plateformes</h2>
+        @foreach($consoles as $console)      
           <div class="console">
             <div class="logo">
-              <img src="images/pc.png" alt="PC" />
+              <img src="images/{{ $console->console }}.png" alt="{{ $console->console }}" />
             </div>
-            <p><b>Ordinateur</b></p>
+            <p><b>{{ $console->console }}</b></p>
           </div>
-          <div class="console">
-            <div class="logo">
-              <img src="images/playstation.png" alt="PlayStation" />
-            </div>
-            <p><b>PlayStation</b></p>
-          </div>
-          <div class="console">
-            <div class="logo">
-              <img src="images/switch.png" alt="Switch Nintendo" />
-            </div>
-            <p><b>Switch</b></p>
-          </div>
-          <div class="console">
-            <div class="logo">
-              <img src="images/xbox.png" alt="XBox" />
-            </div>
-            <p><b>XBox</b></p>
-          </div>
+        @endforeach
         </div>
         <div class="games">
+        @foreach($jeux as $jeu)
           <div class="game">
-            <img src="images/game.png" alt="jeu" />
-            <p><b>Nom du jeu</b></p>
-            <p>00,00€</p>
-          </div>         
+            <img src="images/jeux/{{$jeu->slug}}.png" alt="{{ $jeu->nom }}" />
+            <p><b>{{ $jeu->nom }}</b></p>
+            <p>{{ $jeu->prix }}€</p>
+          </div> 
+        @endforeach        
         </div>
       </div>
       <div class="pages">
