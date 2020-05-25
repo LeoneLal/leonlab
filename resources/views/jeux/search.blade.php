@@ -21,11 +21,20 @@
       crossorigin="anonymous"
     />
     <link href="{{ asset('css/style.css') }}" rel="stylesheet" />
+    <style>
+      .footer{
+        position : absolute;
+      }
+
+      a .logo{
+        width: 30%;
+      }
+    </style>
   </head>
   <body>
     <div class="header">
       <div class="top-left">
-        <img class="logo" src="images/logo.png" alt="logo" />
+        <a  href="{{ url('/') }}"><img class="logo" src="images/logo.png" alt="logo" /></a>
       </div>
 
       <div class="top-center">
@@ -53,15 +62,15 @@
         <div class="games">
         @foreach($jeux as $jeu)
           <div class="game">
-            <img src="images/jeux/{{$jeu->slug}}.png" alt="{{ $jeu->nom }}" />
+            <img src="images/jeux/{{$jeu->slug}}" alt="{{ $jeu->nom }}" />
             <p><b>{{ $jeu->nom }}</b></p>
             <p>{{ $jeu->prix }}€</p>
           </div> 
-        @endforeach        
+        @endforeach   
         </div>
       </div>
       <div class="pages">
-        {{ $jeux->links() }}
+        {{ $jeux->appends(request()->input())->links() }}
       </div>
     </div>
     @extends('footer')
