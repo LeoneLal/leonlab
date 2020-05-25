@@ -30,4 +30,15 @@ class JeuxController extends Controller
                 ->paginate(2);
         return view('jeux.search')->with('jeux', $products);
     }
+
+    public function store(Request $request)
+    {
+        return redirect()->route('jeux.index');
+    }
+
+    public function show($jeuId)
+    {
+        $jeu = Jeu::where('id', $jeuId)->with('console')->first();
+        return view('jeux.show', compact('jeu'));
+    }
 }
