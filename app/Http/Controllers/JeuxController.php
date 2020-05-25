@@ -40,7 +40,6 @@ class JeuxController extends Controller
         $products = Jeu::where('nom', 'like', "%$q%")
                 ->orWhere('description', 'like', "%$q%")
                 ->paginate(2);
-
         return view('jeux.search')->with('jeux', $products);
     }
 }
