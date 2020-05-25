@@ -41,4 +41,16 @@ class JeuxController extends Controller
 
         return view('jeux.search')->with('jeux', $products);
     }
+
+    public function store(Request $request)
+    {
+        return redirect()->route('jeux.index');
+    }
+
+    public function show($jeuId)
+    {
+        $jeu = Jeu::where('id', $jeuId)->first();
+        //dd($jeuId);
+        return view('jeux.show', compact('jeu'));
+    }
 }

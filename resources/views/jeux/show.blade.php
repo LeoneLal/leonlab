@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>LeonLab</title>
+    <title>LeonLab - Jeux</title>
 
     <!-- Fonts -->
     <link
@@ -23,7 +23,7 @@
     <link href="{{ asset('css/style.css') }}" rel="stylesheet" />
   </head>
   <body>
-    <div class="header">
+  <div class="header">
       <div class="top-left">
         <img class="logo" src="images/logo.png" alt="logo" />
       </div>
@@ -46,39 +46,13 @@
       @endif
     </div>
     <div class="main">
-      <div class="filter">
-          <p><b>Prix croissant</b><i class="fas fa-chevron-circle-down"></i></p>
-        </div>
-      <div class="center">
-        <div class="consoles">
-        <h2>Plateformes</h2>
-        @foreach($consoles as $console)   
-          <div class="console">
-            <div class="logo">
-              <img src="images/{{ $console->console }}.png" alt="{{ $console->console }}" />
-            </div>
-            <p><b>{{ $console->console }}</b></p>
-          </div>
-        @endforeach
-        </div>
         <div class="games">
-        @foreach($jeux as $jeu)
-          <a href="{{ route('jeux.show', $jeu->id) }}"> 
             <div class="game">
-              <img src="images/jeux/{{$jeu->slug}}.png" alt="{{ $jeu->nom }}" />
+              <img src="images/jeux/{{$jeu->slug}}" alt="{{ $jeu->nom }}" />
               <p><b>{{ $jeu->nom }}</b></p>
               <p>{{ $jeu->prix }}€</p>
-            </div>
-          </a>  
-        @endforeach        
+            </div>     
         </div>
-      </div>
-      <div class="pages">
-        <p><b>Précédent</b></p>
-        <p>1 2 3 4 5 ... 20</p>
-        <p><b>Suivant</b></p>
-      </div>
     </div>
-    @extends('footer')
   </body>
 </html>
