@@ -50,8 +50,7 @@ class JeuxController extends Controller
 
     public function show($jeuId)
     {
-        $jeu = Jeu::where('id', $jeuId)->first();
-        //dd($jeuId);
+        $jeu = Jeu::where('id', $jeuId)->with('console')->first();
         return view('jeux.show', compact('jeu'));
     }
 }

@@ -19,4 +19,9 @@ class Jeu extends Model
         'avis',
         'note'
     ];
+
+    public function console()
+    {
+        return $this->hasMany(console::class);
+    }
 }

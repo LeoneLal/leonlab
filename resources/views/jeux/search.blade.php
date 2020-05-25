@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>LeonLab</title>
+    <title>LéonLab</title>
 
     <!-- Fonts -->
     <link
@@ -61,11 +61,13 @@
       <div class="center">
         <div class="games">
         @foreach($jeux as $jeu)
-          <div class="game">
-            <img src="images/jeux/{{$jeu->slug}}" alt="{{ $jeu->nom }}" />
-            <p><b>{{ $jeu->nom }}</b></p>
-            <p>{{ $jeu->prix }}€</p>
-          </div> 
+          <a href="{{ route('jeux.show', $jeu->id) }}">
+            <div class="game">
+              <img src="images/jeux/{{$jeu->slug}}" alt="{{ $jeu->nom }}" />
+              <p><b>{{ $jeu->nom }}</b></p>
+              <p>{{ $jeu->prix }}€</p>
+            </div> 
+          </a>
         @endforeach   
         </div>
       </div>

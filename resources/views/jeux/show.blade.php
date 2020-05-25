@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>LeonLab - Jeux</title>
+    <title>Léonlab - {{ $jeu->nom }}</title>
 
     <!-- Fonts -->
     <link
@@ -25,7 +25,7 @@
   <body>
   <div class="header">
       <div class="top-left">
-        <img class="logo" src="images/logo.png" alt="logo" />
+      <a  href="{{ url('/') }}"><img class="logo" src="images/logo.png" alt="logo" /></a>
       </div>
 
       <div class="top-center">
@@ -46,12 +46,14 @@
       @endif
     </div>
     <div class="main">
-        <div class="games">
-            <div class="game">
-              <img src="images/jeux/{{$jeu->slug}}" alt="{{ $jeu->nom }}" />
-              <p><b>{{ $jeu->nom }}</b></p>
-              <p>{{ $jeu->prix }}€</p>
-            </div>     
+        <div class="game">
+            <img src="images/jeux/{{$jeu->slug}}" alt="{{ $jeu->nom }}" />
+            <p><b>{{ $jeu->nom }}</b></p>
+            <p>{{ $console->console }}</p>
+            <p>{{ $jeu->prix }}€</p>    
+        </div>
+        <div>
+            <p>{{ $jeu->description }}</p>
         </div>
     </div>
   </body>
