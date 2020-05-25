@@ -11,6 +11,7 @@ body {
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-size: cover;
+    outline: none;
 }
 
 .main .filter {
@@ -230,10 +231,158 @@ body {
     padding-left: 15px;
     box-shadow: 0px -5px 10px rgb(206, 206, 206);
     background-color: white;
-    position: fixed ;
+    position: fixed;
 }
 
 .footer .social_media {
     width: 20px;
     margin: 10px;
+}
+
+/*//////////Profil page/////////*/
+
+::-webkit-scrollbar-track {
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+
+    background-color: #e8e8e8;
+}
+
+.py-4 {
+    display: flex;
+    flex-direction: row;
+}
+
+.py-4 h2 {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 36px;
+    text-align: center;
+    color: #000000;
+}
+
+.py-4 .left {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    height: 1000px;
+    justify-content: space-around;
+    align-items: center;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+.py-4 .left .solde {
+    background-color: rgb(255, 255, 255);
+    border-radius: 50px;
+    border: 0;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+    height: 200px;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.py-4 .left .solde button {
+    background-color: #dd9f80;
+    border: 0;
+    border-radius: 50px;
+    font-weight: bold;
+    font-size: 24px;
+}
+
+.py-4 .left .profil {
+    background: #ffffff;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+    border-radius: 50px;
+    height: 600px;
+    width: 570px;
+    border: 0;
+}
+
+.py-4 .left .profil .form {
+    margin-left: 70px;
+    margin-right: 70px;
+    font-size: 18px;
+}
+
+.py-4 .left .profil .form button {
+    background: #dd9f80;
+    border-radius: 100px;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 24px;
+    border: 0;
+    width: 210px;
+}
+
+.py-4 .left .profil .form form .champs {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 10%;
+}
+
+.py-4 .left .profil .form form .champs input {
+    border: none;
+    border-bottom: 3px solid #ffde55;
+    width: 200px;
+}
+
+.py-4 .right {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    height: 1000px;
+    margin-left: 5%;
+    margin-right: 5%;
+    background: #ffffff;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+    border-radius: 50px;
+}
+
+.py-4 .right .jeux {
+    overflow: auto;
+}
+.py-4 .right .jeux .jeu {
+    display: flex;
+    background-color: rgb(255, 255, 255);
+    height: 150px;
+    width: 100%;
+    padding: 2%;
+    margin-bottom: 2%;
+}
+
+.py-4 .right .jeux .jeu .picture {
+    display: flex;
+    flex: 1;
+    justify-content: center;
+}
+
+.py-4 .right .jeux .jeu .picture img {
+    height: 100%;
+    width: auto;
+}
+
+.py-4 .right .jeux .jeu .infos {
+    display: flex;
+    flex: 3;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.py-4 .right .jeux .jeu .infos .date {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
