@@ -314,6 +314,9 @@ body {
     margin-left: 70px;
     margin-right: 70px;
     font-size: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .py-4 .left .profil .form button {
