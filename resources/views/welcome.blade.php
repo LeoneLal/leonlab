@@ -64,7 +64,7 @@
         <div class="games">
         @foreach($jeux as $jeu)
           <div class="game">
-            <img src="images/jeux/{{$jeu->slug}}.png" alt="{{ $jeu->nom }}" />
+            <img src="images/jeux/{{$jeu->slug}}" alt="{{ $jeu->nom }}" />
             <p><b>{{ $jeu->nom }}</b></p>
             <p>{{ $jeu->prix }}€</p>
           </div> 
@@ -72,10 +72,9 @@
         </div>
       </div>
       <div class="pages">
-        <p><b>Précédent</b></p>
-        <p>1 2 3 4 5 ... 20</p>
-        <p><b>Suivant</b></p>
+      {{ $jeux->links() }}
       </div>
+      
     </div>
     @extends('footer')
   </body>
