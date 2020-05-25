@@ -13,7 +13,8 @@ class Jeu extends Model
         'nom',
         'slug', 
         'description', 
-        'photo', 
+        'photo',
+        'console_id', 
         'prix',
         'avis',
         'note'
