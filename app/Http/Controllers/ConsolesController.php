@@ -8,9 +8,8 @@ use App\Jeu;
 class ConsolesController extends Controller
 {
     public function search($consoleId){
-        $products = Jeu::where('console_id', '$consoleId');
-        dd($products);
-
-        return view('consoles.search')->with('jeux', $products);
+        $jeux = Jeu::where('console_id', '2');
+      
+        return view('consoles.search',compact('jeux'))->with('jeux', $jeux);
     }
 }
