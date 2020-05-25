@@ -54,7 +54,7 @@ body {
     flex: 1;
 }
 
-.top-left .logo {
+.logo {
     width: auto;
     height: 50%;
     margin-left: 10%;
@@ -132,6 +132,7 @@ body {
 .main {
     display: flex;
     flex-direction: column;
+    padding-bottom: 100px;
 }
 
 .main .center {
@@ -229,6 +230,7 @@ body {
     padding-left: 15px;
     box-shadow: 0px -5px 10px rgb(206, 206, 206);
     background-color: white;
+    position: fixed ;
 }
 
 .footer .social_media {
