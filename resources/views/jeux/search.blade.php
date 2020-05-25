@@ -50,17 +50,6 @@
           <p><b>Prix croissant</b><i class="fas fa-chevron-circle-down"></i></p>
         </div>
       <div class="center">
-        <div class="consoles">
-        <h2>Plateformes</h2>
-        @foreach($consoles as $console)      
-          <div class="console">
-            <div class="logo">
-              <img src="images/{{ $console->console }}.png" alt="{{ $console->console }}" />
-            </div>
-            <p><b>{{ $console->console }}</b></p>
-          </div>
-        @endforeach
-        </div>
         <div class="games">
         @foreach($jeux as $jeu)
           <div class="game">
@@ -72,9 +61,7 @@
         </div>
       </div>
       <div class="pages">
-        <p><b>Précédent</b></p>
-        <p>1 2 3 4 5 ... 20</p>
-        <p><b>Suivant</b></p>
+        {{ $jeux->links() }}
       </div>
     </div>
     @extends('footer')

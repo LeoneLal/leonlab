@@ -21,7 +21,11 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+Route::get('/search', 'JeuxController@search')->name('jeux.search');
 Route::get('/', 'JeuxController@index')->name('jeux.index');
+
+
+
 Route::post('/jeux/store', 'JeuxController@store')->name('jeux.store');
 Route::get('/jeux/create', 'JeuxController@create')->name('jeux.create');
 Route::put('/jeux/{id}/update', 'JeuxController@update')->name('jeux.update');
