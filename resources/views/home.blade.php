@@ -11,38 +11,32 @@
 <div class="profil">
     <h2>Profil</h2>
     <div class="form">
-        <form>
-            <div class="champs">
-                <label>Nom</label>
-                <input type="text" placeholder="Lalloué" />
-            </div>
+        <form  method="POST" action="">
+
+        @csrf
+        @method('PUT')
 
             <div class="champs">
-                <label>Prenom</label>
-                <input type="text" placeholder="Lalloué" />
+                <label>Nom</label>
+                <input type="text" name="nom" placeholder="Lalloué" />
             </div>
 
             <div class="champs">
                 <label>Mail</label>
-                <input type="email" placeholder="Lalloué" />
-            </div>
-
-            <div class="champs">
-                <label>Date de naissance</label>
-                <input type="date" />
+                <input type="email" name="email" placeholder="Lalloué" />
             </div>
 
             <div class="champs">
                 <label>Nouveau mot de passe</label>
-                <input type="password" placeholder="Lalloué" />
+                <input type="password" name="password" />
             </div>
 
             <div class="champs">
                 <label>Vérification</label>
-                <input type="password" placeholder="Lalloué" />
+                <input type="password" name="verifiation" />
             </div>
             
-            <button>Enregistrer</button>
+            <button type="submit">Enregistrer</button>
         </form>
     </div>
 </div>
