@@ -31,9 +31,21 @@ class JeuxController extends Controller
         return view('jeux.search')->with('jeux', $products);
     }
 
+    public function create(){
+        $consoles = Console::all();
+        return view('jeux.create', compact('consoles'));
+    }
+
     public function store(Request $request)
     {
-        return redirect()->route('jeux.index');
+        $jeu = new Jeu();
+        $jeu->nom = $request->get('name');
+        $jeu->slug = $request->get('picture');
+        $jeu->description = $request->get('description');
+        $jeu->console_id = $request->get('console');
+        $jeu->prix = $request->get('prix');
+        $jeu->save();
+        return redirect()->route('jeux.create');
     }
 
     public function show($jeuId)

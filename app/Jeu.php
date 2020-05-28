@@ -20,6 +20,9 @@ class Jeu extends Model
         'note'
     ];
 
+    
+    public $timestamps = false;
+
     public function console()
     {
         return $this->hasMany(console::class);

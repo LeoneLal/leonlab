@@ -26,11 +26,9 @@ Route::get('/', 'JeuxController@index')->name('jeux.index');
 
 Route::get('/console/{id}', 'ConsolesController@search')->name('consoles.search');
 
-
-
-Route::post('/jeux/store', 'JeuxController@store')->name('jeux.store');
-Route::get('/jeux/create', 'JeuxController@create')->name('jeux.create');
 Route::put('/jeux/{id}/update', 'JeuxController@update')->name('jeux.update');
 Route::get('/jeux/{id}/edit', 'JeuxController@edit')->name('jeux.edit');
 Route::get('/jeux/{id}/show', 'JeuxController@show')->name('jeux.show');
-Route::get('/jeux/{id}/delete', 'JeuxController@delete')->name('jeux.delete');
+Route::get('/jeux/create', 'JeuxController@create')->name('jeux.create');
+Route::post('/jeux/store', 'JeuxController@store')->name('jeux.store');
+

@@ -21,8 +21,7 @@ class CreateTableJeuVideo extends Migration
             $table->unsignedBigInteger('console_id');
             $table->foreign('console_id')->references('id')->on('consoles');
             $table->float('prix', 8,2);
-            $table->float('note', 8,2);
-            $table->timestamp('created_at')->useCurrent();
+            $table->float('note', 8,2)->nullable();
         });
     }
 
