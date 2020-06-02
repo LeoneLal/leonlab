@@ -61,9 +61,8 @@
                                                      document.getElementById('logout-form').submit();">
                                         {{ __('Logout') }}
                                     </a>
-                                    @if ( Auth::user()->role == 1 )
-                                    <a class="dropdown-item" href="{{ route('admin.index') }}">{{ __('Admin') }}</a>
-                                    @endif
+
+                                    <a class="dropdown-item" href="{{ route('jeux.create') }}">{{ __('Admin') }}</a>
 
 
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">

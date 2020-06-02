@@ -64,11 +64,6 @@
                 <input type="text" class="form-control" name="prix" id="prixJeux">
             </div>
 
-            <div class="form-group">
-                <label for="stockJeu">Stock</label>
-                <input type="number" class="form-control" name="stock" id="stockJeu">
-            </div>
-
             <div class="bouton">           
                 <button type="submit" class="btn">Submit</button>
             </div>

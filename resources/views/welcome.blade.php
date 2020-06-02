@@ -46,9 +46,9 @@
       @endif
     </div>
     <div class="main">
-      <!--<div class="filter">
+      <div class="filter">
           <p><b>Prix croissant</b><i class="fas fa-chevron-circle-down"></i></p>
-        </div>-->
+        </div>
       <div class="center">
         <div class="consoles">
         <h2>Plateformes</h2>
@@ -58,7 +58,7 @@
             
             
             <div class="logo">
-              <img src="images/{{ $console->slug }}" alt="{{ $console->console }}" />
+              <img src="images/{{ $console->console }}.png" alt="{{ $console->console }}" />
             </div>
             <p><b>{{ $console->console }}</b></p>
             
@@ -79,7 +79,7 @@
         </div>
       </div>
       <div class="pages">
-        {{ $jeux->links() }}
+      {{ $jeux->links() }}
       </div>
       
     </div>
