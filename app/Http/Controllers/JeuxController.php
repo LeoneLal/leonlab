@@ -55,7 +55,6 @@ class JeuxController extends Controller
     {
         $console =  Console::all();
         $jeu = Jeu::where('id', $jeuId)->with('console')->first();
-        //dd($jeu->console['console']);
         return view('jeux.show', compact('jeu', 'console'));
     }
 }
