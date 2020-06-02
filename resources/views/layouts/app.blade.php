@@ -62,8 +62,9 @@
                                         {{ __('Logout') }}
                                     </a>
 
-                                    <a class="dropdown-item" href="{{ route('jeux.create') }}">{{ __('Admin') }}</a>
-
+                                    @if ( Auth::user()->role == 1 )
+                                    <a class="dropdown-item" href="{{ route('admin.index') }}">{{ __('Admin') }}</a>
+                                    @endif
 
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                         @csrf
