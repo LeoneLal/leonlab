@@ -36,7 +36,7 @@
               @csrf
             <div class="form-group">
                 <label for="nomJeu">Nom du jeu</label>
-                <input type="text" id="id="nomJeu"" name="name" class="form-control">
+                <input type="text" id="id="nomJeu name="name" class="form-control">
             </div>
 
             <div class="form-group">
