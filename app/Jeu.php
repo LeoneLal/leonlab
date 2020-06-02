@@ -25,6 +25,6 @@ class Jeu extends Model
 
     public function console()
     {
-        return $this->hasMany(console::class);
+        return $this->belongsTo(console::class, "id");
     }
 }

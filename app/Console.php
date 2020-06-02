@@ -15,4 +15,9 @@ class Console extends Model
     ];
 
     public $timestamps = false;
+    
+    public function jeu()
+    {
+        return $this->hasMany(jeu::class);
+    }
 }

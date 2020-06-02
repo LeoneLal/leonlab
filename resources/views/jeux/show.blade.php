@@ -30,7 +30,6 @@
 
       <div class="top-center">
       @include('partials.search')
-        
       </div>
 
       @if (Route::has('login'))
@@ -49,8 +48,8 @@
         <div class="game">
             <img src="images/jeux/{{$jeu->slug}}" alt="{{ $jeu->nom }}" />
             <p><b>{{ $jeu->nom }}</b></p>
-            <p>{{ $console->console }}</p>
-            <p>{{ $jeu->prix }}€</p>    
+            <p>{{ $jeu->console['console'] }}</p>
+            <p>{{ $jeu->prix }}€</p>
         </div>
         <div>
             <p>{{ $jeu->description }}</p>

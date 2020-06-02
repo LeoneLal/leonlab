@@ -9,7 +9,6 @@ use App\Console;
 
 class JeuxController extends Controller
 {
-
     public function index(){
         $consoles = Console::all();
         $jeux = Jeu::all();
@@ -54,7 +53,9 @@ class JeuxController extends Controller
 
     public function show($jeuId)
     {
+        $console =  Console::all();
         $jeu = Jeu::where('id', $jeuId)->with('console')->first();
-        return view('jeux.show', compact('jeu'));
+        //dd($jeu->console['console']);
+        return view('jeux.show', compact('jeu', 'console'));
     }
 }
