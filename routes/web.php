@@ -32,3 +32,7 @@ Route::get('/jeux/{id}/show', 'JeuxController@show')->name('jeux.show');
 Route::get('/jeux/create', 'JeuxController@create')->name('jeux.create');
 Route::post('/jeux/store', 'JeuxController@store')->name('jeux.store');
 
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

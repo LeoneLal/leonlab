@@ -12,4 +12,10 @@ class Console extends Model
         'id', 
         'console'
     ];
+
+    
+    public function jeu()
+    {
+        return $this->hasMany(jeu::class);
+    }
 }
