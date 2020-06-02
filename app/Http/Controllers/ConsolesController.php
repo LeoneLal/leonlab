@@ -10,9 +10,12 @@ use App\Console;
 class ConsolesController extends Controller
 {
     public function search($consoleId){
-        $jeux = Jeu::where('console_id', '2');
-      
-        return view('consoles.search',compact('jeux'))->with('jeux', $jeux);
+        $consoles = Console::all();
+        $jeux = DB::table('jeux')->where('console_id', $consoleId)->get();
+        
+        return view('consoles.search',compact('jeux', 'consoles'))->with('jeux', $jeux);
+    }
+    
     public function create(){
         return view('consoles.create');
     }
