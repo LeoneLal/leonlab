@@ -25,7 +25,7 @@
   <body>
     <div class="header">
       <div class="top-left">
-        <img class="logo" src="../images/logo.png" alt="logo" />
+        <a href="{{ url('/') }}"><img class="logo" src="../images/logo.png" alt="logo" /></a>
       </div>
 
       <div class="top-center">
@@ -50,6 +50,19 @@
           <p><b>Prix croissant</b><i class="fas fa-chevron-circle-down"></i></p>
         </div>
       <div class="center">
+        <div class="consoles">
+          <h2>Plateformes</h2>
+          @foreach($consoles as $console)   
+          <a href={{route('consoles.search', $console->id)}}>   
+            <div class="console">
+              <div class="logo">
+                <img src="../images/{{ $console->console }}.png" alt="{{ $console->console }}" />
+              </div>
+            <p><b>{{ $console->console }}</b></p>
+          </div>
+        </a>
+        @endforeach
+        </div>
         <div class="games">
         @foreach($jeux as $jeu)
           <div class="game">
@@ -61,7 +74,7 @@
         </div>
       </div>
       <div class="pages">
-        {{ $jeux->appends(request()->input())->links() }}
+       
       </div>
     </div>
     @extends('footer')

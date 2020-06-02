@@ -33,7 +33,10 @@ class JeuxController extends Controller
 
     public function create(){
         $consoles = Console::all();
-        return view('jeux.create', compact('consoles'));
+        if( \Auth::user()->role == 1)
+            return view('jeux.create', compact('consoles'));
+        else
+            return redirect()->route('jeux.index');
     }
 
     public function store(Request $request)
@@ -44,6 +47,7 @@ class JeuxController extends Controller
         $jeu->description = $request->get('description');
         $jeu->console_id = $request->get('console');
         $jeu->prix = $request->get('prix');
+        $jeu->stock = $request->get('stock');
         $jeu->save();
         return redirect()->route('jeux.create');
     }
