@@ -24,6 +24,8 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/search', 'JeuxController@search')->name('jeux.search');
 Route::get('/', 'JeuxController@index')->name('jeux.index');
 
+Route::get('/admin', 'AdminController@index')->name('admin.index');
+
 Route::get('/console/{id}', 'ConsolesController@search')->name('consoles.search');
 
 Route::put('/jeux/{id}/update', 'JeuxController@update')->name('jeux.update');
