@@ -10,6 +10,9 @@ class Console extends Model
 
     protected $fillable=[
         'id', 
-        'console'
+        'console',
+        'slug',
     ];
+
+    public $timestamps = false;
 }
