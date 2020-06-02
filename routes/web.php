@@ -24,6 +24,8 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/search', 'JeuxController@search')->name('jeux.search');
 Route::get('/', 'JeuxController@index')->name('jeux.index');
 
+Route::get('/admin', 'AdminController@index')->name('admin.index');
+
 Route::get('/console/{id}', 'ConsolesController@search')->name('consoles.search');
 Route::get('/consoles/create', 'ConsolesController@create')->name('consoles.create');
 Route::post('/consoles/store', 'ConsolesController@store')->name('consoles.store');
