@@ -4,8 +4,8 @@
 <div class="left">
 <div class="solde">
     <h2>Solde</h2>
-    <p>15 €</p>
-    <button>Ajouter</button>
+    <p>{{ $user[0]->solde }} €</p>
+    <a href="{{ route('user.edit_solde') }}"><button>Ajouter</button></a>
 </div>
 
 <div class="profil">
