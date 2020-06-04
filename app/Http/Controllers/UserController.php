@@ -25,3 +25,12 @@ class UserController extends Controller
         return redirect()->route('home');
     }
 
+    public function update_profil(Request $request){
+        $user = User::where('id', \Auth::user()->id)->first();
+        $user->name = $request->get('name');
+        $user->email = $request->get('email');
+        $user->password = $request->get('password');
+        $user->save();
+        return redirect()->route('home');
+    }
+}

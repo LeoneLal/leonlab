@@ -11,19 +11,19 @@
 <div class="profil">
     <h2>Profil</h2>
     <div class="form">
-        <form  method="POST" action="">
+        <form  method="POST" action="{{ route('user.update_profil') }}">
 
         @csrf
         @method('PUT')
 
             <div class="champs">
                 <label>Nom</label>
-                <input type="text" name="nom" placeholder="Lalloué" />
+                <input type="text" name="name" value="{{ $user[0]->name }}" />
             </div>
 
             <div class="champs">
                 <label>Mail</label>
-                <input type="email" name="email" placeholder="Lalloué" />
+                <input type="email" name="email" value="{{ $user[0]->email }}" />
             </div>
 
             <div class="champs">

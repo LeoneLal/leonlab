@@ -26,6 +26,10 @@ Route::get('/', 'JeuxController@index')->name('jeux.index');
 
 Route::get('/admin', 'AdminController@index')->name('admin.index');
 
+Route::get('/user/edit_solde', 'UserController@edit_solde')->name('user.edit_solde');
+Route::put('/user/update_solde', 'UserController@update_solde')->name('user.update_solde');
+Route::put('/user/update_profil', 'UserController@update_profil')->name('user.update_profil');
+
 Route::get('/console/{id}', 'ConsolesController@search')->name('consoles.search');
 Route::get('/consoles/create', 'ConsolesController@create')->name('consoles.create');
 Route::post('/consoles/store', 'ConsolesController@store')->name('consoles.store');

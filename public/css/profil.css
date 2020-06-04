@@ -1,0 +1,12 @@
+.solde {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.actual,
+.nouveau {
+    display: flex;
+    height: 300px;
+    width: 500px;
+}
