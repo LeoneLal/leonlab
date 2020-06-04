@@ -25,7 +25,7 @@
   <body>
   <div class="header">
       <div class="top-left">
-      <a  href="{{ url('/') }}"><img class="logo" src="images/logo.png" alt="logo" /></a>
+      <a  href="{{ url('/') }}"><img class="logo" src="../../images/logo.png" alt="logo" /></a>
       </div>
 
       <div class="top-center">
