@@ -398,11 +398,20 @@ a {
     margin-left: 10%;
 }
 
-.one-game {
-    position: absolute;
-    height: 40%;
-    left: 15%;
-    top: 25%;
-    border-radius: 20%;
+.one-game img {
+    height: 250px;
+    border-radius: 50px;
 }
 
+.block {
+    width: 95%;
+    background: rgba(255, 255, 255, 0.25);
+    border-radius: 50px;
+}
+
+.comments {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 100px 100px 100px;
+    grid-auto-flow: row;
+}
