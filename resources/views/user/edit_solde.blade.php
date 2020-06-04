@@ -33,7 +33,7 @@
     <div class="solde">
         <div class="actual">
             <h2>Solde actuel</h2>
-            <p>{{ $user->solde }} €</p>
+            <p class="valeur">{{ $user->solde }} €</p>
         </div>
         <div class="nouveau">
             <form method="POST" action="{{ route('user.update_solde') }}">
@@ -41,10 +41,14 @@
                 @csrf
                 @method('PUT')
 
-                <label for="Add_solde">
-                    Montant à ajouter
-                </label>
-                <input type="number" name="solde">
+                <div class="plus">
+                    <label for="Add_solde">Montant à ajouter : </label>
+                    <input type="number" name="solde">
+                </div>
+                <div class="moins">
+                    <label for="Add_solde">Montant à retirer : </label>
+                    <input type="number" name="solde_moins">
+                </div>
 
                 <button type="submit">Valider</button>
             </form>
