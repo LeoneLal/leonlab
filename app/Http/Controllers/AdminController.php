@@ -13,7 +13,7 @@ class AdminController extends Controller
 {
     public function index(){
         $nb_jeux = Jeu::all()->count();
-        $last_users = User::where( 'created_at', '>', Carbon::now()->subDays(2))
+        $last_users = User::where( 'created_at', '>', Carbon::now()->subDays(7))
            ->count();
         $users = User::all()->count();
         $color = '#DD9F80';
