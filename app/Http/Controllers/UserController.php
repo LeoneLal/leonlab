@@ -14,18 +14,21 @@ class UserController extends Controller
 
     public function update_solde(Request $request){
 
-        $validatedData = $request->validate([
-            'solde'=> 'required',
-        ]);
-
+        
+        
         $prec_solde = \Auth::user()->solde;
         $user = User::where('id', \Auth::user()->id)->first();
-        $user->solde = $prec_solde + $request->get('solde');
+        if($request->get('solde') != null){
+            $user->solde = $prec_solde + $request->get('solde');
+        }else if($request->get('solde_moins') != null){
+            $user->solde = $prec_solde - $request->get('solde_moins');
+        }
         $user->save();
         return redirect()->route('home');
     }
 
     public function update_profil(Request $request){
+        
         $user = User::where('id', \Auth::user()->id)->first();
         $user->name = $request->get('name');
         $user->email = $request->get('email');

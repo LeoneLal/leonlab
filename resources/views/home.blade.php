@@ -1,11 +1,12 @@
 @extends('layouts.app')
 
 @section('content')
+
 <div class="left">
 <div class="solde">
     <h2>Solde</h2>
     <p>{{ $user[0]->solde }} €</p>
-    <a href="{{ route('user.edit_solde') }}"><button>Ajouter</button></a>
+    <a href="{{ route('user.edit_solde') }}"><button>Modifier</button></a>
 </div>
 
 <div class="profil">
