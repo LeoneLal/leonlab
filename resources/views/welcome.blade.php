@@ -42,6 +42,8 @@
         @if (Route::has('register'))
         <a href="{{ route('register') }}">Register</a>
         @endif @endauth
+
+        <a href="{{ route('cart.index') }}"><img src="images/panier.png" alt="Panier"> <span class="badge badge-pill badge-dark ">{{ Cart::count()}}</span></a>
       </div>
       @endif
     </div>
