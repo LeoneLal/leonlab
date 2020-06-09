@@ -54,6 +54,13 @@
         <div>
             <p>{{ $jeu->description }}</p>
         </div>
+        <div class="panier">
+          <form action="{{ route('cart.store')}}" method="POST">
+            @csrf
+            <input type="hidden" name="product_id" value="{{ $jeu->id }}">
+            <button type="submit" class="btn btn-dark">Ajouter au panier</button>
+          </form>
+        </div>
     </div>
   </body>
 </html>
