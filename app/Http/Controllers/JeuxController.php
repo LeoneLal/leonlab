@@ -13,7 +13,7 @@ class JeuxController extends Controller
         $consoles = Console::all();
         $jeux = Jeu::all();
         $jeux = DB::table('jeux')->paginate(16);
-        return view('welcome', compact('consoles', 'jeux'), ['jeux' => $jeux]);
+        return view('index', compact('consoles', 'jeux'), ['jeux' => $jeux]);
     }
 
     public function search()
