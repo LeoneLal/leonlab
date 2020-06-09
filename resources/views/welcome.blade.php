@@ -46,6 +46,16 @@
       @endif
     </div>
     <div class="main">
+      @if (session('success'))
+        <div class="alert alert-success">
+          {{session('success')}}
+        </div>
+      @endif
+      @if (session('warning'))
+        <div class="alert alert-warning">
+          {{session('warning')}}
+        </div>
+      @endif
       <!--<div class="filter">
           <p><b>Prix croissant</b><i class="fas fa-chevron-circle-down"></i></p>
       </div>-->
