@@ -25,11 +25,16 @@
   <body>
     <div class="header">
       <div class="top-left">
-        <a  href="{{ url('/') }}"><img class="logo" src="../../images/logo.png" alt="logo" /></a>
+        <a href="{{ url('/') }}" class="link"><img class="logo" src="{{ asset('images/logo.png') }}" alt="logo" /></a>
       </div>
 
       <div class="top-center">
-      @include('partials.search')
+        <form method='GET' action="{{ route('jeux.search')}}" class="d-flex mr-3">
+            <input type="text" name="q" placeholder="Trouvez votre jeu !" />
+            <button type="submit" class="btn btn-info">
+                <i class="fas fa-search"></i>
+            </button>
+        </form>
       </div>
 
       @if (Route::has('login'))

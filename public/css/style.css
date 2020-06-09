@@ -60,6 +60,12 @@ a {
     flex: 1;
 }
 
+.top-left .link .logo {
+    width: auto;
+    height: 80px;
+    margin-left: 15%;
+}
+
 .top-center {
     display: flex;
     flex-direction: row;
