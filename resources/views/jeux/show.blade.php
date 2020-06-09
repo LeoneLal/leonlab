@@ -23,9 +23,9 @@
     <link href="{{ asset('css/style.css') }}" rel="stylesheet" />
   </head>
   <body>
-  <div class="header">
+    <div class="header">
       <div class="top-left">
-      <a  href="{{ url('/') }}"><img class="logo" src="../../images/logo.png" alt="logo" /></a>
+        <a  href="{{ url('/') }}"><img class="logo" src="../../images/logo.png" alt="logo" /></a>
       </div>
 
       <div class="top-center">
@@ -45,14 +45,28 @@
       @endif
     </div>
     <div class="main">
-        <div class="game">
-          <img src="../../images/jeux/{{$jeu->slug}}" alt="{{ $jeu->nom }}" />
+        <div class="one-game container">
+          <div class="row">
+            <img src="../../images/jeux/{{$jeu->slug}}" alt="{{ $jeu->nom }}" />
             <p><b>{{ $jeu->nom }}</b></p>
             <p>{{ $jeu->console['console'] }}</p>
             <p>{{ $jeu->prix }}€</p>
-        </div>
-        <div>
-            <p>{{ $jeu->description }}</p>
+          </div>
+          <div>
+            <div class="block">
+              <h3>Description</h3>
+              <p>{{ $jeu->description }}</p>
+            </div>
+            <div class="block">
+              <h3>Avis</h3>
+              <div class="comments">
+                <p>1</p>
+                <p>2</p>
+                <p>3</p>
+                <p>4</p>
+              </div>
+            </div>
+          </div>
         </div>
         <div class="panier">
           <form action="{{ route('cart.store')}}" method="POST">
@@ -62,5 +76,6 @@
           </form>
         </div>
     </div>
+    @extends('footer')
   </body>
 </html>
