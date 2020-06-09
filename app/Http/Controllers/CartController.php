@@ -65,4 +65,34 @@ class CartController extends Controller
         return back()->with('success', 'Le produit a été supprimé.');
     }
 
+
+    public function pay(Request $request)
+    {
+        $user_id = \Auth::user()->id;
+
+        $fiche = new Fiche();
+        $fiche->prix_total = Cart::subtotal();
+        $fiche->facture = 'A faire';
+        $fiche->user_id = $user_id;
+        $fiche->save();
+        
+        foreach(Cart::content() as $jeu){
+            $ligne = new Ligne();
+            $ligne->fiche_id = $fiche->id;
+            $ligne->jeu_id = $jeu->model->id;
+            $ligne->prix = $jeu->model->prix;
+            $ligne->code = "azerty123";
+            $ligne->save();            
+        }
+
+        
+        $prec_solde = \Auth::user()->solde;
+        $user = User::where('id', \Auth::user()->id)->first();
+        $user->solde = $prec_solde - Cart::subtotal();
+        $user->save(); 
+
+        Cart::destroy();
+        return redirect()->route('admin.index')->with('success', 'Commande validée.');
+    }
+
 }
