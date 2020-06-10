@@ -15,9 +15,9 @@
 </head>
 <body>
     <div class="header">
-      <div class="top-left">
-        <a href=""><img class="logo" src="images/logo.png" alt="logo" /></a>
-      </div>
+        <div class="top-left">
+            <a href="{{ url('/') }}" class="link"><img class="logo" src="{{ asset('images/logo.png') }}" alt="logo" /></a>
+        </div>
 
       <div class="top-center">
         <form method='GET' action="{{ route('jeux.search')}}" class="d-flex mr-3">
@@ -77,7 +77,7 @@
         </div>
         <div class="prix">
        
-            <p>{{ Cart::count()}} articles</p>
+            <p>{{ Cart::count() }} articles</p>
             <div class="line">
             <p><b>Total</b></p>
             <p><b>{{Cart::subtotal()}}€</b></p>
@@ -87,17 +87,21 @@
             <p>{{ $user->solde }}€</p>
             </div>
             @if($user->solde - Cart::subtotal() < 0)
-            <p>Solde insuffisant</p>
-            <a href="{{ route('user.edit_solde') }}"><button>Modifier</button></a>
+                <p>Solde insuffisant</p>
+                <a href="{{ route('user.edit_solde') }}"><button>Modifier</button></a>
+            @elseif(Cart::count() == 0)
+                <div class="alert alert-secondary">
+                    <p class="warning">Ajouter un jeu au panier.</p>
+                </div>
             @else
-            <div class="line">
-            <p>Nouveau solde :</p>
-            <p>{{ $user->solde - Cart::subtotal() }}€</p>
-            </div>
-            <form action="{{ route('cart.pay') }}" method="post"> 
-                @csrf
-                <button type="submit" >Paiement</button>
-            </form>
+                <div class="line">
+                <p>Nouveau solde :</p>
+                <p>{{ $user->solde - Cart::subtotal() }}€</p>
+                </div>
+                <form action="{{ route('cart.pay') }}" method="post"> 
+                    @csrf
+                    <button type="submit" >Paiement</button>
+                </form>
             @endif
         </div>
     </div>
