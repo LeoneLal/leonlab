@@ -69,34 +69,40 @@ class CartController extends Controller
     public function pay(Request $request)
     {
         $user_id = \Auth::user()->id;
-
-        $fiche = new Fiche();
-        $fiche->prix_total = Cart::subtotal();
-        $fiche->facture = 'A faire';
-        $fiche->user_id = $user_id;
-        $fiche->save();
-        
-        foreach(Cart::content() as $jeu){
-            $ligne = new Ligne();
-            $ligne->fiche_id = $fiche->id;
-            $ligne->jeu_id = $jeu->model->id;
-            $ligne->prix = $jeu->model->prix;
-            $ligne->code = "azerty123";
-            $ligne->save();     
+        if( Cart::count() > 0)
+        {
+            $fiche = new Fiche();
+            $fiche->prix_total = Cart::subtotal();
+            $fiche->facture = 'A faire';
+            $fiche->user_id = $user_id;
+            $fiche->save();
             
-            $game = Jeu::where('id',$jeu->model->id)->first();
-            $game->stock = $jeu->model->stock - 1;
-            $game->save();
+            foreach(Cart::content() as $jeu){
+                $ligne = new Ligne();
+                $ligne->fiche_id = $fiche->id;
+                $ligne->jeu_id = $jeu->model->id;
+                $ligne->prix = $jeu->model->prix;
+                $ligne->code = "azerty123";
+                $ligne->save();     
+                
+                $game = Jeu::where('id',$jeu->model->id)->first();
+                $game->stock = $jeu->model->stock - 1;
+                $game->save();
+            }
+    
+            
+            $prec_solde = \Auth::user()->solde;
+            $user = User::where('id', \Auth::user()->id)->first();
+            $user->solde = $prec_solde - Cart::subtotal();
+            $user->save(); 
+    
+            Cart::destroy();
+            return redirect()->route('admin.index')->with('success', 'Commande validée.');
+
+        }else{
+            return redirect()->route('admin.index');
         }
-
         
-        $prec_solde = \Auth::user()->solde;
-        $user = User::where('id', \Auth::user()->id)->first();
-        $user->solde = $prec_solde - Cart::subtotal();
-        $user->save(); 
-
-        Cart::destroy();
-        return redirect()->route('admin.index')->with('success', 'Commande validée.');
     }
 
 }
