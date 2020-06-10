@@ -36,31 +36,30 @@
     </div>
     <h2 class="title" >Administration</h2>
     <nav class="navbarre">
-        <div class="actual">
-            <p>Tableau de bord</p>
-            <div class="on"></div>
-        </div>
-        <a href="{{route('jeux.create')}}"><div>
-            <p>Jeux</p>
-            <div class="on"></div>
-        </div></a>
-        <div>
-            <p>Membres</p>
-            <div class="on"></div>
-        </div>
+        <a href="{{route('admin.index')}}">
+            <div class="actual">
+                <p>Tableau de bord</p>
+                <div class="on"></div>
+            </div>
+        </a>
+        <a href="{{route('admin.game')}}">
+            <div>
+                <p>Jeux</p>
+                <div class="on"></div>
+            </div>
+        </a>
+        <a href="{{route('admin.members')}}">
+            <div>
+                <p>Membres</p>
+                <div class="on"></div>
+            </div>
+        </a>
     </nav>
     <div class="graphs">
         <div class="graph">
             {!! $chart->container() !!}
         </div>
-        <div class="graph">
-        </div>
     </div>
-
-
-
-
-
 
     <!--<a href="{{ route('jeux.create') }}">Ajouter un jeu</a>
     <a href="{{ route('consoles.create') }}">Ajouter une console</a>-->
