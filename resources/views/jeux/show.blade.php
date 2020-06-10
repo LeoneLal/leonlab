@@ -77,7 +77,16 @@
           <form action="{{ route('cart.store')}}" method="POST">
             @csrf
             <input type="hidden" name="product_id" value="{{ $jeu->id }}">
+            @if($jeu->stock > 0 && $jeu->stock <= 3)
+            <div class="alert alert-warning">
+              <p>Plus que {{ $jeu->stock }} jeux en stock !</p>
+            </div>
             <button type="submit" class="btn btn-dark">Ajouter au panier</button>
+            @else
+            <div class="alert alert-danger">
+              <p>Plus en stock !</p>
+            </div>
+            @endif
           </form>
         </div>
     </div>
