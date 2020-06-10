@@ -82,7 +82,11 @@ class CartController extends Controller
             $ligne->jeu_id = $jeu->model->id;
             $ligne->prix = $jeu->model->prix;
             $ligne->code = "azerty123";
-            $ligne->save();            
+            $ligne->save();     
+            
+            $game = Jeu::where('id',$jeu->model->id)->first();
+            $game->stock = $jeu->model->stock - 1;
+            $game->save();
         }
 
         
