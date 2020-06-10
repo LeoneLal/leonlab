@@ -26,6 +26,8 @@ Route::get('/home', 'HomeController@index')->name('home');
  * Admin panel route
  */
 Route::get('/admin', 'AdminController@index')->name('admin.index');
+Route::get('/admin/game', 'AdminController@game')->name('admin.game');
+Route::get('/admin/members', 'AdminController@members')->name('admin.members');
 
 /**
  * User routes
@@ -46,11 +48,12 @@ Route::post('/consoles/store', 'ConsolesController@store')->name('consoles.store
  */
 Route::get('/search', 'JeuxController@search')->name('jeux.search');
 Route::get('/', 'JeuxController@index')->name('jeux.index');
-Route::put('/jeux/{id}/update', 'JeuxController@update')->name('jeux.update');
-Route::get('/jeux/{id}/edit', 'JeuxController@edit')->name('jeux.edit');
-Route::get('/jeux/{id}/show', 'JeuxController@show')->name('jeux.show');
 Route::get('/jeux/create', 'JeuxController@create')->name('jeux.create');
 Route::post('/jeux/store', 'JeuxController@store')->name('jeux.store');
+Route::get('/jeux/{id}/show', 'JeuxController@show')->name('jeux.show');
+Route::get('/jeux/{id}/edit', 'JeuxController@edit')->name('jeux.edit');
+Route::put('/jeux/{id}/update', 'JeuxController@update')->name('jeux.update');
+Route::post('/jeux/delete', 'JeuxController@delete')->name('jeux.delete');
 
 /**
  * Cart routes
