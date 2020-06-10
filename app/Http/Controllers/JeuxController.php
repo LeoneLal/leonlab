@@ -57,4 +57,14 @@ class JeuxController extends Controller
         $jeu = Jeu::where('id', $jeuId)->with('console')->first();
         return view('jeux.show', compact('jeu', 'console'));
     }
+
+    public function edit($gameId){
+        $game = Jeu::where('id', $gameId)->with('console')->first();
+        if( \Auth::user()->role == 1)
+            return view('jeux.edit', compact('game'));
+        else
+            return redirect()->route('jeux.index');
+    }
+
+
 }
