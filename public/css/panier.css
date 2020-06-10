@@ -45,11 +45,11 @@
     width: 40px;
 }
 
-.all .jeux .jeu .right button{
+.all .jeux .jeu .right button {
     border: none;
     background: none;
     font-family: "Montserrat", sans-serif;
-    border-bottom: 3px solid #FFDE55;
+    border-bottom: 3px solid #ffde55;
 }
 
 .all .prix {
@@ -66,23 +66,30 @@
     padding-right: 2%;
 }
 
-.line {
+.line,
+.alert {
     display: flex;
     flex-direction: row;
     width: -webkit-fill-available;
     justify-content: space-between;
 }
 
-.all .prix button{
-    background: #DD9F80;
-    border-radius: 100px;  
+.all .prix .alert {
+    justify-content: center;
+}
+
+.all .prix .warning {
+    margin: 0;
+}
+
+.all .prix button {
+    background: #dd9f80;
+    border-radius: 100px;
     border: none;
     padding: 4%;
     outline: none;
-    
-    color: #FFFFFF;
+
+    color: #ffffff;
     font-weight: bold;
     font-size: 24px;
 }
-
-wrt..plt

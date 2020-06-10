@@ -436,3 +436,12 @@ a {
     grid-template-rows: 100px 100px 100px;
     grid-auto-flow: row;
 }
+
+.panier {
+    display: flex;
+    justify-content: center;
+}
+
+.panier .alert p {
+    margin: 0;
+}
