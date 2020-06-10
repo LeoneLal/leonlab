@@ -29,8 +29,11 @@ class AdminController extends Controller
         $chart->dataset('Quantités', 'bar', [$nb_sales, $nb_users, $nb_jeux])
             ->color("#DFAEFF")
             ->backgroundcolor("rgb(171, 235, 244)");
-
-        return view('admin.index', compact('chart'));
+        if( \Auth::user()->role == 1)
+            return view('admin.index', compact('chart'));
+        else
+            return redirect()->route('jeux.index');
+        
     }
 
     public function game(){
@@ -48,7 +51,10 @@ class AdminController extends Controller
             ->color("#DFAEFF")
             ->backgroundcolor("rgb(171, 235, 244)");
 
-        return view('admin.game', compact('games_chart', 'games'));
+        if( \Auth::user()->role == 1)
+            return view('admin.game', compact('games_chart', 'games'));
+        else
+            return redirect()->route('jeux.index');
     }
 
 }
