@@ -66,5 +66,10 @@ class JeuxController extends Controller
             return redirect()->route('jeux.index');
     }
 
+    public function update(Request $request)
+    {
+        
+        $game = Jeu::where('id',$jeu->model->id)->first();
+    }
 
 }
