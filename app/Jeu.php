@@ -6,6 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Jeu extends Model
 {
+
+    public $timestamps = false;
+
     protected $table="jeux";
 
     protected $fillable=[
@@ -16,12 +19,10 @@ class Jeu extends Model
         'photo',
         'console_id', 
         'prix',
-        'avis',
-        'note'
+        'note', 
+        'stock'
     ];
 
-    
-    public $timestamps = false;
 
     public function console()
     {
