@@ -32,4 +32,23 @@ class AdminController extends Controller
 
         return view('admin.index', compact('chart'));
     }
+
+    public function game(){
+        $games = Jeu::all();
+
+        $month_sales = Ligne::where( 'created_at', '>', Carbon::now()->subDays(30))->count();
+        $sales = Ligne::all()->count();
+        $weeks_sales = Ligne::where( 'created_at', '>', Carbon::now()->subDays(7))->count();
+        
+        
+        $games_chart = new SampleChart;
+        $games_chart->title('Ventes');
+        $games_chart->labels(['Ventes des 7 derniers jours', 'Ventes des 30 derniers jours', 'Ventes totales']);
+        $games_chart->dataset('Quantités', 'bar', [$weeks_sales, $month_sales, $sales])
+            ->color("#DFAEFF")
+            ->backgroundcolor("rgb(171, 235, 244)");
+
+        return view('admin.game', compact('games_chart', 'games'));
+    }
+
 }
