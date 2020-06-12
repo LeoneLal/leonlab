@@ -419,15 +419,18 @@ a {
     margin-left: 10%;
 }
 
-.one-game img {
+.container .row img {
     height: 250px;
     border-radius: 50px;
 }
 
 .block {
-    width: 95%;
+    width: 100%;
     background: rgba(255, 255, 255, 0.25);
     border-radius: 50px;
+    margin: auto;
+    margin-top: 50px;
+    padding: 30px;
 }
 
 .comments {
