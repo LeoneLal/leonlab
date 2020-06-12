@@ -4,10 +4,12 @@ namespace App\Http\Controllers;
 
 use Gloudemans\Shoppingcart\Facades\Cart;
 use Illuminate\Http\Request;
+use Carbon\Carbon;
 use App\Fiche;
 use App\Jeu;
 use App\Ligne;
 use App\User;
+use PDF;
 
 
 class CartController extends Controller
@@ -71,11 +73,21 @@ class CartController extends Controller
         $user_id = \Auth::user()->id;
         if( Cart::count() > 0)
         {
+            $username = \Auth::user()->name;
+            $mytime = Carbon::now();
+            $fiche = Fiche::all()->last();
+            $number = $fiche->id;
+            $pdf =  PDF::loadView('pdf.bill', compact('mytime', 'username', 'number'))
+            ->setPaper('a4')
+            ->setWarnings(false)
+            ->save(public_path("factures/Facture$number.pdf"));
+
             $fiche = new Fiche();
             $fiche->prix_total = Cart::subtotal();
-            $fiche->facture = 'A faire';
+            $fiche->facture = "Facture$number.pdf";
             $fiche->user_id = $user_id;
             $fiche->save();
+
             
             foreach(Cart::content() as $jeu){
                 $ligne = new Ligne();
@@ -89,7 +101,6 @@ class CartController extends Controller
                 $game->stock = $jeu->model->stock - 1;
                 $game->save();
             }
-    
             
             $prec_solde = \Auth::user()->solde;
             $user = User::where('id', \Auth::user()->id)->first();
