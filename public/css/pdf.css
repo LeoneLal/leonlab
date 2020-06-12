@@ -1,0 +1,43 @@
+body {
+    font-family: "Roboto", sans-serif;
+}
+
+table {
+    margin-bottom: 5%;
+}
+
+.middle {
+    margin: 0;
+}
+
+.right {
+    padding-right: 250px;
+}
+
+td {
+    width: 300px;
+}
+
+.block {
+    width: 100%;
+}
+
+.block h1.blue {
+    font-size: 50px;
+}
+
+.block .logo {
+    width: 250px;
+    height: auto;
+    margin-left: 10%;
+}
+
+.block hr {
+    border: 2px #d66260 solid;
+    color: #d66260;
+}
+
+.block .blue{
+    color: #003366;
+    font-size: 25px;
+}
