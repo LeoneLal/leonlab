@@ -64,6 +64,12 @@ Route::delete('/cart/{rowId}', 'CartController@destroy')->name('cart.destroy');
 Route::post('/cart/pay', 'CartController@pay')->name('cart.pay');
 Route::get('/videpanier', function(){ Cart::destroy(); });
 
+/**
+ * Route receipt
+ */
+Route::get('/pdf', 'PdfController@receipt')->name('pdf.receipt');
+Route::get('/download', 'PdfController@print')->name('pdf.print');
+
 
 Auth::routes();
 
