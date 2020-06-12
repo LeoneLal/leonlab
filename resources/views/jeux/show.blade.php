@@ -82,6 +82,8 @@
               <p>Plus que {{ $jeu->stock }} jeux en stock !</p>
             </div>
             <button type="submit" class="btn btn-dark">Ajouter au panier</button>
+            @elseif($jeu->stock > 0)
+            <button type="submit" class="btn btn-dark">Ajouter au panier</button>
             @else
             <div class="alert alert-danger">
               <p>Plus en stock !</p>
