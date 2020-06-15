@@ -5,7 +5,7 @@
 <div class="left">
 <div class="solde">
     <h2>Solde</h2>
-    <p>{{ $user[0]->solde }} €</p>
+    <p>{{ $user->solde }} €</p>
     <a href="{{ route('user.edit_solde') }}"><button>Modifier</button></a>
 </div>
 
@@ -19,12 +19,12 @@
 
             <div class="champs">
                 <label>Nom</label>
-                <input type="text" name="name" value="{{ $user[0]->name }}" />
+                <input type="text" name="name" value="{{ $user->name }}" />
             </div>
 
             <div class="champs">
                 <label>Mail</label>
-                <input type="email" name="email" value="{{ $user[0]->email }}" />
+                <input type="email" name="email" value="{{ $user->email }}" />
             </div>
 
             <div class="champs">

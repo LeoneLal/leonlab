@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\User;
+use App\Fiche;
+use App\Ligne;
 
 class HomeController extends Controller
 {
@@ -25,7 +27,10 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $user =  DB::table('users')->where( 'id', \Auth::user()->id)->get();
+        $user =  DB::table('users')->where( 'id', \Auth::user()->id)->first();
+        
+       
+        
         return view('home', compact('user'));
     }
 }
