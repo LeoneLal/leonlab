@@ -25,7 +25,7 @@ class Ligne extends Model
 
 	public function Game()
 	{
-		return $this->belongsTo(Jeu::class, 'id');
+		return $this->belongsTo(Jeu::class, "jeu_id");
 	}
 
 }

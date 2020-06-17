@@ -47,6 +47,7 @@
     <h2>Achats</h2>
     <div class="jeux">
     @foreach( $line as $game)
+
         <div class="jeu">
             <div class="picture">
                 <img src="images/jeux/{{$game->Game->slug}}" alt="Rust" />

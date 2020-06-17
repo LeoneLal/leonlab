@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\DB;
 use App\User;
 use App\Fiche;
 use App\Ligne;
+use App\Jeu;
 
 class HomeController extends Controller
 {
