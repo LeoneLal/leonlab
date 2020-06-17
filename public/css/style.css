@@ -379,6 +379,7 @@ a {
 .py-4 .right .jeux {
     overflow: auto;
     margin-bottom: 6%;
+    margin-right: 25px;
 }
 .py-4 .right .jeux .jeu {
     display: flex;
@@ -411,6 +412,10 @@ a {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+}
+
+.py-4 .right .jeux .jeu .infos .date i {
+    margin-left: 15px;
 }
 
 .logo {
