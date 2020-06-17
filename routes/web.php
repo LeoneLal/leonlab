@@ -69,6 +69,7 @@ Route::get('/videpanier', function(){ Cart::destroy(); });
  */
 Route::get('/pdf', 'PdfController@receipt')->name('pdf.receipt');
 Route::get('/download', 'PdfController@print')->name('pdf.print');
+Route::get('/read/{number}', 'PdfController@download')->name('pdf.download');
 
 
 Auth::routes();
