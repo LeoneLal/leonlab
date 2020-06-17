@@ -26,7 +26,7 @@ Route::get('/home', 'HomeController@index')->name('home');
  * Admin panel route
  */
 Route::get('/admin', 'AdminController@index')->name('admin.index');
-Route::get('/admin/game', 'AdminController@game')->name('admin.game');
+Route::get('/admin/games', 'AdminController@games')->name('admin.games');
 Route::get('/admin/members', 'AdminController@members')->name('admin.members');
 
 /**
