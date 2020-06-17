@@ -36,7 +36,7 @@ class AdminController extends Controller
         
     }
 
-    public function game(){
+    public function games(){
         $games = Jeu::all();
 
         $month_sales = Ligne::where( 'created_at', '>', Carbon::now()->subDays(30))->count();
@@ -52,9 +52,11 @@ class AdminController extends Controller
             ->backgroundcolor("rgb(171, 235, 244)");
 
         if( \Auth::user()->role == 1)
-            return view('admin.game', compact('games_chart', 'games'));
+            return view('admin.games', compact('games_chart', 'games'));
         else
             return redirect()->route('jeux.index');
     }
+
+    public function members(){}
 
 }
