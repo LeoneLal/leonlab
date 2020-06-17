@@ -30,4 +30,10 @@ class PdfController extends Controller
         ->save(public_path("factures/Facture$number.pdf"));
         return redirect()->route('jeux.index');
     }
+
+    public function download($number){
+        $pathToFile = public_path("factures/Facture$number.pdf");
+        return response()->file($pathToFile);
+    }
+
 }
