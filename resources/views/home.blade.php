@@ -46,20 +46,23 @@
 <div class="right">
     <h2>Achats</h2>
     <div class="jeux">
+    @foreach( $line as $game)
         <div class="jeu">
             <div class="picture">
-                <img src="images/jeux/rust.png" alt="Rust" />
+                <img src="images/jeux/{{$game->Game->slug}}" alt="Rust" />
             </div>
             <div class="infos">
                 <div class="titre">
-                    <h2>RUST</h2>
+                    <h3>{{$game->Game->nom}}</h3>
                 </div>
                 <div class="date">
-                    <p>21/05/2020</p>
-                    <p><b>Facture</b></p> <i class="far fa-arrow-to-bottom"></i>
+                    <p>{{ $game->Card->created_at }}</p>
+                    <a href="{{ route('pdf.download', $game->Card->id) }}"><p><b>Facture</b><i class="fas fa-file-download"></i></p></a>
                 </div>
             </div>
         </div>
+    @endforeach
+        
     </div>
 </div>
 <script src="https://kit.fontawesome.com/a076d05399.js"></script>
