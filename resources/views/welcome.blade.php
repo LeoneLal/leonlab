@@ -13,7 +13,6 @@
     />
 
     <!-- Styles -->
-    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
     <link
       rel="stylesheet"
       href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
@@ -97,5 +96,6 @@
       
     </div>
     @extends('footer')
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
   </body>
 </html>
