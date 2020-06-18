@@ -57,6 +57,24 @@ class AdminController extends Controller
             return redirect()->route('jeux.index');
     }
 
-    public function members(){}
+    public function members(){
+        $members = User::all();
+
+        $month_new_members = User::where( 'created_at', '>', Carbon::now()->subDays(30))->count();
+        $member_count = User::all()->count();
+        $weeks_new_members = User::where( 'created_at', '>', Carbon::now()->subDays(7))->count();
+
+        $members_chart = new SampleChart;
+        $members_chart->title('Membres');
+        $members_chart->labels(['Nouveaux membres (7 jours)','Nouveaux membres (30 jours)', 'Total membres']);
+        $members_chart->dataset('Quantités', 'bar', [$weeks_new_members, $month_new_members, $member_count])
+            ->color("#DFAEFF")
+            ->backgroundcolor("rgb(171, 235, 244)");
+
+        if( \Auth::user()->role == 1)
+            return view('admin.members', compact('members_chart', 'members'));
+        else
+            return redirect()->route('jeux.index', compact('games'));
+    }
 
 }
