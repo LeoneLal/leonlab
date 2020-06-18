@@ -485,3 +485,41 @@ a {
 .panier .alert p {
     margin: 0;
 }
+
+@media (max-width: 1200px) {
+    .py-4 {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .py-4 .left .solde,
+    .profil,
+    .right {
+        margin: 2%;
+    }
+
+    .py-4 .right {
+        max-width: 800px;
+        min-width: 800px;
+    }
+}
+
+@media (max-width: 900px) {
+    .py-4 .right {
+        max-width: 400px;
+        min-width: 400px;
+    }
+
+    .py-4 .right .jeux {
+        height: 500px;
+    }
+
+    .py-4 .right .jeux .jeu {
+        flex-direction: column;
+    }
+
+    .py-4 .right .jeux .jeu .picture img {
+        width: 100px;
+        height: auto;
+    }
+}
