@@ -19,6 +19,38 @@ a {
     text-decoration: none;
 }
 
+/*MENU*/
+@media (min-width: 900px) {
+    .menu {
+        display: none;
+    }
+}
+
+.menu .icons a {
+    color: #dea081;
+    text-decoration: none;
+}
+
+.menu {
+    width: 100%;
+    box-shadow: 0px -4px 50px rgba(0, 0, 0, 0.25);
+    background-color: white;
+    position: fixed;
+    bottom: 0;
+}
+
+.menu .icons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
+}
+.menu .icons .icon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .main .filter {
     display: flex;
     justify-content: flex-end;
