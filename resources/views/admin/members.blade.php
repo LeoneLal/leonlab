@@ -66,7 +66,7 @@
         @foreach($members as $member)
             <div class="member list-group-item">
                 <p>Name : {{ $member->name }}</p>
-                <a href="#">
+                <a href="{{ route('user.edit', $member->id) }}">
                     <button class="btn btn-success">Modifier</button>
                 </a>
                 <a href="{{ route('user.delete',  $member->id) }}">
