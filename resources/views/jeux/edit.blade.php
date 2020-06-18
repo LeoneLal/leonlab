@@ -6,6 +6,7 @@
     <title>Document</title>
     <link href="{{ asset('css/style.css') }}" rel="stylesheet" />
     <link href="{{ asset('css/createGame.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet" />
 </head>
 <body>
     <div class="header">
