@@ -19,6 +19,38 @@ a {
     text-decoration: none;
 }
 
+/*MENU*/
+@media (min-width: 900px) {
+    .menu {
+        display: none;
+    }
+}
+
+.menu .icons a {
+    color: #dea081;
+    text-decoration: none;
+}
+
+.menu {
+    width: 100%;
+    box-shadow: 0px -4px 50px rgba(0, 0, 0, 0.25);
+    background-color: white;
+    position: fixed;
+    bottom: 0;
+}
+
+.menu .icons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
+}
+.menu .icons .icon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .main .filter {
     display: flex;
     justify-content: flex-end;
@@ -451,4 +483,42 @@ a {
 
 .panier .alert p {
     margin: 0;
+}
+
+@media (max-width: 1200px) {
+    .py-4 {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .py-4 .left .solde,
+    .profil,
+    .right {
+        margin: 2%;
+    }
+
+    .py-4 .right {
+        max-width: 800px;
+        min-width: 800px;
+    }
+}
+
+@media (max-width: 900px) {
+    .py-4 .right {
+        max-width: 400px;
+        min-width: 400px;
+    }
+
+    .py-4 .right .jeux {
+        height: 500px;
+    }
+
+    .py-4 .right .jeux .jeu {
+        flex-direction: column;
+    }
+
+    .py-4 .right .jeux .jeu .picture img {
+        width: 100px;
+        height: auto;
+    }
 }

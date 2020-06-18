@@ -1,3 +1,11 @@
+html,
+body {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+}
+
 .all {
     display: flex;
     flex-direction: row;
@@ -92,4 +100,28 @@
     color: #ffffff;
     font-weight: bold;
     font-size: 24px;
+}
+
+@media (max-width: 1200px) {
+    .all {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .all .prix,
+    .jeux {
+        margin: 2%;
+    }
+
+    .all .prix {
+        max-width: 500px;
+        min-width: 500px;
+        padding: 3%;
+    }
+}
+
+@media (max-width: 500px) {
+    .all {
+        width: view-port;
+    }
 }
