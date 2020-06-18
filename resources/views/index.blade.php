@@ -67,20 +67,24 @@
       </div>-->
       <div class="center">
         <div class="consoles">
-        <h2>Plateformes</h2>
-        @foreach($consoles as $console)   
-        <a href={{route('consoles.search', $console->id)}}>   
-          <div class="console">
-            
-            
-            <div class="logo">
-              <img src="images/{{ $console->slug }}" alt="{{ $console->console }}" />
-            </div>
-            <p><b>{{ $console->console }}</b></p>
-            
+          <div class="title">
+            <h2>Plateformes</h2>
           </div>
-        </a>
-        @endforeach
+          <div class="all_c">
+            @foreach($consoles as $console)   
+              <a href={{route('consoles.search', $console->id)}}>   
+                <div class="console">
+                  
+                  
+                  <div class="logo">
+                    <img src="images/{{ $console->slug }}" alt="{{ $console->console }}" />
+                  </div>
+                  <p><b>{{ $console->console }}</b></p>
+                  
+                </div>
+              </a>
+            @endforeach
+          </div>
         </div>
         <div class="games">
         @foreach($jeux as $jeu)
@@ -98,8 +102,8 @@
       {{ $jeux->links() }}
       </div>
       
-    </div>
-    
+    </div> 
+    @extends('footer')
     <nav class="menu">
         <div class="icons">
             <a href="index.html">

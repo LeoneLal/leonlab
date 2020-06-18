@@ -20,11 +20,6 @@ a {
 }
 
 /*MENU*/
-@media (min-width: 900px) {
-    .menu {
-        display: none;
-    }
-}
 
 .menu .icons a {
     color: #dea081;
@@ -114,16 +109,6 @@ a {
     box-shadow: 0px 10px 5px rgba(0, 0, 0, 0.25);
 }
 
-@media (max-width: 850px) {
-    .top-center input {
-        width: 200px;
-    }
-
-    .top-right {
-        justify-content: center;
-    }
-}
-
 .top-center .btn {
     width: 40px;
     height: 40px;
@@ -187,7 +172,7 @@ a {
     margin-left: 2%;
 }
 
-.console {
+.main .center .consoles .console {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -198,7 +183,7 @@ a {
     text-align: center;
 }
 
-.console .logo {
+.main .center .consoles .console .logo {
     background-color: white;
     border-radius: 100%;
     width: fit-content;
@@ -207,7 +192,7 @@ a {
     box-shadow: 0px 5px 10px rgb(206, 206, 206);
 }
 
-.console img {
+.main .center .consoles .console img {
     width: 50px;
     height: auto;
 }
@@ -222,18 +207,6 @@ a {
     justify-content: center;
     flex: 4;
     height: fit-content;
-}
-
-@media (max-width: 1100px) {
-    .main .center .games {
-        flex: 2;
-    }
-}
-
-@media (min-width: 1800px) {
-    .main .center .games {
-        flex: 5;
-    }
 }
 
 .main .center .games .game {
@@ -456,7 +429,7 @@ a {
     margin-left: 10%;
 }
 
-.game-img {
+.container .row img {
     height: 250px;
     border-radius: 50px;
 }
@@ -486,6 +459,12 @@ a {
     margin: 0;
 }
 
+@media (min-width: 1800px) {
+    .main .center .games {
+        flex: 5;
+    }
+}
+
 @media (max-width: 1200px) {
     .py-4 {
         flex-direction: column;
@@ -501,6 +480,19 @@ a {
     .py-4 .right {
         max-width: 800px;
         min-width: 800px;
+    }
+}
+
+@media (max-width: 1100px) {
+    .main .center .games {
+        flex: 2;
+    }
+}
+
+/*MENU*/
+@media (min-width: 901px) {
+    .menu {
+        display: none;
     }
 }
 
@@ -521,5 +513,57 @@ a {
     .py-4 .right .jeux .jeu .picture img {
         width: 100px;
         height: auto;
+    }
+
+    .top-left {
+        display: none;
+    }
+
+    .top-right {
+        display: none;
+    }
+
+    .top-center {
+        width: 100%;
+    }
+
+    .top-center form,
+    .top-center form input {
+        width: 70%;
+        justify-content: center;
+    }
+}
+
+/*HEADER*/
+@media (max-width: 850px) {
+    .top-center input {
+        width: 200px;
+    }
+
+    .top-right {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 780px) {
+    .main .center {
+        flex-direction: column;
+    }
+
+    .main .center .consoles {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .main .center .consoles .all_c{
+        display: flex;
+        flex-direction: row;
+    }
+
+    .main .center .consoles .all_c .console {
+        flex-direction: column;
+        justify-content: center;
+        width: 200px;
     }
 }
