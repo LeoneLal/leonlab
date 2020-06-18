@@ -66,10 +66,28 @@ class JeuxController extends Controller
             return redirect()->route('jeux.index');
     }
 
-    public function update(Request $request)
+    public function update(Request $request, $gameId)
     {
+        $game = Jeu::where('id', $gameId)->first();
+        $game->nom = $request->get('name');
+        $game->slug = $request->get('picture');
+        $game->description = $request->get('description');
+        $game->console_id = $request->get('console');
+        $game->prix = $request->get('prix');
+        $game->stock = $request->get('stock');
+        $game->save();
+        return redirect()->route('jeux.create');
         
-        $game = Jeu::where('id',$jeu->model->id)->first();
+    }
+
+    //Delete a contact from the company
+    public function delete($jeuId){
+        $jeu = Jeu::where('id', $jeuId)->first();
+        $jeu->delete();
+        if( \Auth::user()->role == 1)
+            return redirect()->route('admin.games');
+        else
+            return redirect()->route('jeux.index');
     }
 
 }

@@ -26,7 +26,7 @@ Route::get('/home', 'HomeController@index')->name('home');
  * Admin panel route
  */
 Route::get('/admin', 'AdminController@index')->name('admin.index');
-Route::get('/admin/game', 'AdminController@game')->name('admin.game');
+Route::get('/admin/games', 'AdminController@games')->name('admin.games');
 Route::get('/admin/members', 'AdminController@members')->name('admin.members');
 
 /**
@@ -53,7 +53,7 @@ Route::post('/jeux/store', 'JeuxController@store')->name('jeux.store');
 Route::get('/jeux/{id}/show', 'JeuxController@show')->name('jeux.show');
 Route::get('/jeux/{id}/edit', 'JeuxController@edit')->name('jeux.edit');
 Route::put('/jeux/{id}/update', 'JeuxController@update')->name('jeux.update');
-Route::post('/jeux/delete', 'JeuxController@delete')->name('jeux.delete');
+Route::get('/jeux/{id}/delete', 'JeuxController@delete')->name('jeux.delete');
 
 /**
  * Cart routes
@@ -69,6 +69,7 @@ Route::get('/videpanier', function(){ Cart::destroy(); });
  */
 Route::get('/pdf', 'PdfController@receipt')->name('pdf.receipt');
 Route::get('/download', 'PdfController@print')->name('pdf.print');
+Route::get('/read/{number}', 'PdfController@download')->name('pdf.download');
 
 
 Auth::routes();

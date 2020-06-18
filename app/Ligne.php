@@ -17,4 +17,15 @@ class Ligne extends Model
 		'code',
 		'created_at',
 	];
+
+	public function Card()
+	{
+		return $this->belongsTo(Fiche::class, 'fiche_id');
+	}
+
+	public function Game()
+	{
+		return $this->belongsTo(Jeu::class, "jeu_id");
+	}
+
 }

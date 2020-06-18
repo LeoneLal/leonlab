@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\DB;
 use App\User;
 use App\Fiche;
 use App\Ligne;
+use App\Jeu;
 
 class HomeController extends Controller
 {
@@ -28,9 +29,9 @@ class HomeController extends Controller
     public function index()
     {
         $user =  DB::table('users')->where( 'id', \Auth::user()->id)->first();
-        
-       
-        
-        return view('home', compact('user'));
+        $line = Ligne::whereHas('Card', function($query){
+            return $query->where('user_id', \Auth::user()->id);
+        })->with('Game')->with('Card')->get();
+        return view('home', compact('user', 'line'));
     }
 }

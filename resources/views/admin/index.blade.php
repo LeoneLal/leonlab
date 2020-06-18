@@ -42,7 +42,7 @@
                 <div class="on"></div>
             </div>
         </a>
-        <a href="{{route('admin.game')}}">
+        <a href="{{route('admin.games')}}">
             <div>
                 <p>Jeux</p>
                 <div class="on"></div>

@@ -51,13 +51,12 @@
 
             <div class="form-group">
                 <label for="image">Image du jeu</label>
-                <img src="{{ asset('images/jeux/$game->slug')}}" alt="{{ $game->nom }}" />
-                <input type="file" class="form-control-file" name="picture" id="image">
+                <input type="file" class="form-control-file" name="picture" id="image" value="{{ $game->slug}}">
             </div>
 
             <div class="form-group">
                 <label for="pet-select">Choisir la console : </label>
-                <select class="champs" id="categories" name="console">
+                <select class="champs" id="categories" name="console" value="{{ $game->console_id}}">
                 </select>
             </div>
 
