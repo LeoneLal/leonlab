@@ -36,4 +36,13 @@ class UserController extends Controller
         $user->save();
         return redirect()->route('home');
     }
+
+    public function delete($memberId){
+        $member = User::where('id', $memberId)->first();
+        $member->delete();
+        if( \Auth::user()->role == 1)
+            return redirect()->route('admin.members');
+        else
+            return redirect()->route('jeux.index');
+    }
 }

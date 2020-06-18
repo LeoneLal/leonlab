@@ -6,7 +6,7 @@
     <link href="{{ asset('css/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet" />
     <link href="{{ asset('css/style.css') }}" rel="stylesheet" />
     <link href="{{ asset('css/admin.css') }}" rel="stylesheet" />
-    <title>Document</title>
+    <title>Admin panel</title>
 </head>
 <body>
     <div class="header">

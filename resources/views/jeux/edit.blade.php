@@ -37,9 +37,10 @@
     </div>
     <div class="formulaire">
         <h1 class="display-4">Modifier un jeu</h1>
-        <form method="POST" action="{{ route('jeux.store') }}">
+        <form method="POST" action="{{ route('jeux.update', $game->id) }}">
             @csrf
             @method('PUT')
+
             <div class="form-group">
                 <label for="nomJeu">Nom du jeu</label>
                 <input type="text" id="id="nomJeu name="name" class="form-control" value="{{ $game->nom }}">
@@ -52,13 +53,18 @@
 
             <div class="form-group">
                 <label for="image">Image du jeu</label>
-                <input type="file" class="form-control-file" name="picture" id="image" value="{{ $game->slug}}">
+                <input type="text" class="form-control-file" name="picture" id="image" value="{{ $game->slug}}">
             </div>
 
             <div class="form-group">
                 <label for="pet-select">Choisir la console : </label>
-                <select class="champs" id="categories" name="console" value="{{ $game->console_id}}">
+                <select class="champs" id="categories" name="console">
+                    <option value="{{ $game->console_id}}">{{ $game->console->console}}</option>
+                    @foreach($consoles as $console)
+                    <option value="{{$console->id}}">{{$console->console}}</option>
+                    @endforeach
                 </select>
+               
             </div>
 
             <div class="form-group">

@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+<meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="{{ asset('css/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet" />
     <link href="{{ asset('css/style.css') }}" rel="stylesheet" />
     <link href="{{ asset('css/admin.css') }}" rel="stylesheet" />
-    <title>Document</title>
+    <title>Admin panel</title>
 </head>
 <body>
     <div class="header">
@@ -38,19 +38,19 @@
     <h2 class="title" >Administration</h2>
     <nav class="navbarre">
         <a href="{{route('admin.index')}}">
-            <div class="actual">
+            <div>
                 <p>Tableau de bord</p>
                 <div class="on"></div>
             </div>
         </a>
-        <a href="{{route('admin.game')}}">
+        <a href="{{route('admin.games')}}">
             <div>
                 <p>Jeux</p>
                 <div class="on"></div>
             </div>
         </a>
         <a href="{{route('admin.members')}}">
-            <div>
+            <div class="actual">
                 <p>Membres</p>
                 <div class="on"></div>
             </div>
@@ -58,19 +58,25 @@
     </nav>
     <div class="graphs">
         <div class="graph">
-            {!! $chart->container() !!}
+            {!! $members_chart->container() !!}
         </div>
     </div>
 
-
-
-
-
-
-    <!--<a href="{{ route('jeux.create') }}">Ajouter un jeu</a>
-    <a href="{{ route('consoles.create') }}">Ajouter une console</a>
+    <div class="members list-group">
+        @foreach($members as $member)
+            <div class="member list-group-item">
+                <p>Name : {{ $member->name }}</p>
+                <a href="#">
+                    <button class="btn btn-success">Modifier</button>
+                </a>
+                <a href="{{ route('user.delete',  $member->id) }}">
+                    <button class="btn btn-danger">Supprimer</button>
+                </a>
+            </div>
+        @endforeach
+    </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js" charset="utf-8"></script>
-    {!! $chart->script() !!}-->
-
+    {!! $members_chart->script() !!}
+    
 </body>
 </html> 

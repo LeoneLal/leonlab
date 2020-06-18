@@ -35,6 +35,7 @@ Route::get('/admin/members', 'AdminController@members')->name('admin.members');
 Route::get('/user/edit_solde', 'UserController@edit_solde')->name('user.edit_solde');
 Route::put('/user/update_solde', 'UserController@update_solde')->name('user.update_solde');
 Route::put('/user/update_profil', 'UserController@update_profil')->name('user.update_profil');
+Route::get('/user/{id}/delete', 'UserController@delete')->name('user.delete');
 
 /**
  * Consoles routes
