@@ -7,6 +7,7 @@
         <link href="{{ asset('css/style.css') }}" rel="stylesheet" />
         <link href="{{ asset('css/createGame.css') }}" rel="stylesheet">
         <link href="{{ asset('css/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet" /> 
+        <link href="{{ asset('fa/css/all.css') }}" rel="stylesheet"/>
     </head>
     <body>
         <div class="header">

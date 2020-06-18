@@ -20,6 +20,7 @@
     <link href="{{ asset('css/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet" />
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
+    <link href="{{ asset('fa/css/all.css') }}" rel="stylesheet"/>
 </head>
 <body>
     <div id="app">
@@ -82,6 +83,5 @@
             @yield('content')
         </main>
     </div>
-    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 </body>
 </html>

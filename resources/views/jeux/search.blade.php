@@ -13,7 +13,7 @@
     />
 
     <!-- Styles -->
-    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <link href="{{ asset('fa/css/all.css') }}" rel="stylesheet"/>
     <link href="{{ asset('css/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet" />
     <link href="{{ asset('css/style.css') }}" rel="stylesheet" />
     <style>
