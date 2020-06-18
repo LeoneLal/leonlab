@@ -37,6 +37,25 @@ class UserController extends Controller
         return redirect()->route('home');
     }
 
+    public function edit($memberId){
+        $user = User::where('id', $memberId)->first();
+        return view('user.edit', compact('user'));
+    }
+
+    public function update(Request $request, $memberId){
+        $user = User::where('id', $memberId)->first();
+        $user->name = $request->get('name');
+        $user->email = $request->get('mail');
+        $user->password = $request->get('password');
+        $user->role = $request->get('role');
+        $user->solde = $request->get('solde');
+        $user->save();
+        if( \Auth::user()->role == 1)
+            return redirect()->route('admin.members');
+        else
+            return redirect()->route('jeux.index');
+    }
+
     public function delete($memberId){
         $member = User::where('id', $memberId)->first();
         $member->delete();
