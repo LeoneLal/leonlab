@@ -66,24 +66,49 @@
         <div class="main">
             <div class="container">
                 <div class="row">
-                    <img
+                    <img class="game-img"
                         src="../../images/jeux/{{$jeu->slug}}"
                         alt="{{ $jeu->nom }}"
                     />
-                    <div class="column center">
+                    <div class="column">
                         <p><b>{{ $jeu->nom }}</b></p>
-                        <div class="consoles">
-                            <div class="console">
-                                <div class="logo">
-                                    <img
-                                        src="../../images/{{ $jeu->console['slug'] }}"
-                                        alt="{{ $jeu->console['console'] }}"
-                                    />
-                                </div>
-                                <p><b>{{ $jeu->console['console'] }}</b></p>
+                        <div class="console">
+                            <div class="logo">
+                                <img
+                                    src="../../images/{{ $jeu->console['slug'] }}"
+                                    alt="{{ $jeu->console['console'] }}"
+                                />
                             </div>
+                            <p><b>{{ $jeu->console['console'] }}</b></p>
                         </div>
-                        <p>{{ $jeu->prix }}€</p>
+                        <p>38 commentaires</p>
+                        <div class="panier">
+                            <p>{{ $jeu->prix }}€</p>
+                            <form action="{{ route('cart.store')}}" method="POST">
+                                @csrf
+                                <input
+                                    type="hidden"
+                                    name="product_id"
+                                    value="{{ $jeu->id }}"
+                                />
+                                @if($jeu->stock > 0 && $jeu->stock <= 3)
+                                <div class="alert alert-warning">
+                                    <p>Plus que {{ $jeu->stock }} jeux en stock !</p>
+                                </div>
+                                <button type="submit" class="btn btn-dark">
+                                    Ajouter au panier
+                                </button>
+                                @elseif($jeu->stock > 0)
+                                <button type="submit" class="btn btn-dark">
+                                    Ajouter au panier
+                                </button>
+                                @else
+                                <div class="alert alert-danger">
+                                    <p>Plus en stock !</p>
+                                </div>
+                                @endif
+                            </form>
+                        </div>
                     </div>
                 </div>
                 <div class="block">
@@ -99,32 +124,6 @@
                         <p>4</p>
                     </div>
                 </div>
-            </div>
-            <div class="panier">
-                <form action="{{ route('cart.store')}}" method="POST">
-                    @csrf
-                    <input
-                        type="hidden"
-                        name="product_id"
-                        value="{{ $jeu->id }}"
-                    />
-                    @if($jeu->stock > 0 && $jeu->stock <= 3)
-                    <div class="alert alert-warning">
-                        <p>Plus que {{ $jeu->stock }} jeux en stock !</p>
-                    </div>
-                    <button type="submit" class="btn btn-dark">
-                        Ajouter au panier
-                    </button>
-                    @elseif($jeu->stock > 0)
-                    <button type="submit" class="btn btn-dark">
-                        Ajouter au panier
-                    </button>
-                    @else
-                    <div class="alert alert-danger">
-                        <p>Plus en stock !</p>
-                    </div>
-                    @endif
-                </form>
             </div>
         </div>
         @extends('footer')
