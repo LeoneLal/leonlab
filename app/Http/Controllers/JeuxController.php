@@ -26,7 +26,7 @@ class JeuxController extends Controller
         $consoles = Console::all();
         $products = Jeu::where('nom', 'like', "%$q%")
                 ->orWhere('description', 'like', "%$q%")
-                ->paginate(2);
+                ->paginate(10);
         return view('jeux.search')->with('jeux', $products);
     }
 
@@ -59,8 +59,10 @@ class JeuxController extends Controller
     }
 
     public function edit($gameId){
+
         $consoles = Console::all();
         $game = Jeu::where('id', $gameId)->with('console')->first();
+        dd($game);
         if( \Auth::user()->role == 1)
             return view('jeux.edit', compact('game', 'consoles'));
         else
