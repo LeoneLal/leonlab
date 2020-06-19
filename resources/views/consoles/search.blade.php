@@ -45,9 +45,6 @@
       @endif
     </div>
     <div class="main">
-      <div class="filter">
-          <p><b>Prix croissant</b><i class="fas fa-chevron-circle-down"></i></p>
-        </div>
       <div class="center">
         <div class="consoles">
           <h2>Plateformes</h2>
@@ -64,12 +61,14 @@
         </div>
         <div class="games">
         @foreach($jeux as $jeu)
-          <div class="game">
-            <img src="../images/jeux/{{$jeu->slug}}" alt="{{ $jeu->nom }}" />
-            <p><b>{{ $jeu->nom }}</b></p>
-            <p>{{ $jeu->prix }}€</p>
-          </div> 
-        @endforeach        
+          <a href="{{ route('jeux.show', $jeu->id) }}"> 
+            <div class="game">
+              <img src="../images/jeux/{{$jeu->slug}}" alt="{{ $jeu->nom }}" />
+              <p><b>{{ $jeu->nom }}</b></p>
+              <p>{{ $jeu->prix }}€</p>
+            </div>
+          </a>  
+        @endforeach      
         </div>
       </div>
       <div class="pages">

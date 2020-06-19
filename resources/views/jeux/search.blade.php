@@ -54,9 +54,6 @@
       @endif
     </div>
     <div class="main">
-      <div class="filter">
-          <p><b>Prix croissant</b><i class="fas fa-chevron-circle-down"></i></p>
-      </div>
       <div class="center">
         <div class="games">
         @foreach($jeux as $jeu)
