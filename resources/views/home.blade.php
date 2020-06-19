@@ -35,11 +35,6 @@
           <input type="password" name="password" />
         </div>
 
-        <div class="champs">
-          <label>Vérification</label>
-          <input type="password" name="verifiation" />
-        </div>
-
         <button type="submit">Enregistrer</button>
       </form>
     </div>
