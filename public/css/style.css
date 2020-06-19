@@ -531,6 +531,10 @@ a {
         width: 70%;
         justify-content: center;
     }
+
+    .footer {
+        margin-bottom: 63px;
+    }
 }
 
 /*HEADER*/
@@ -555,9 +559,9 @@ a {
         justify-content: center;
     }
 
-    .main .center .consoles .all_c{
+    .main .center .consoles .all_c {
         display: flex;
-        flex-direction: row;
+        flex-wrap: wrap;
     }
 
     .main .center .consoles .all_c .console {
