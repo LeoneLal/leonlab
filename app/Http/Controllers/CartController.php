@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use Gloudemans\Shoppingcart\Facades\Cart;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 use Carbon\Carbon;
+use App\Mail\New_purchase;
 use App\Fiche;
 use App\Jeu;
 use App\Ligne;
@@ -108,6 +110,7 @@ class CartController extends Controller
                 {
                     $chaineAleatoire .= $caracteres[rand(0, strlen($caracteres) - 1)];
                 }
+
                 $ligne = new Ligne();
                 $ligne->fiche_id = $fiche->id;
                 $ligne->jeu_id = $jeu->model->id;
@@ -119,6 +122,18 @@ class CartController extends Controller
                 $game->stock = $jeu->model->stock - 1;
                 $game->save();
             }
+
+            /**
+             * Sending email facture
+             */
+            $last_file = Fiche::all()->last();
+            $facture = "Facture$number.pdf";
+            $games = "tableau des jeux";
+            $codes = Ligne::where('fiche_id', $last_file->id)->with('Game')->get();
+
+            Mail::to(\Auth::user())
+            ->send( new New_purchase($codes, $facture));
+
             /**
              * Updating user's balance
              */
@@ -126,6 +141,8 @@ class CartController extends Controller
             $user = User::where('id', \Auth::user()->id)->first();
             $user->solde = $prec_solde - Cart::subtotal();
             $user->save(); 
+
+            
     
             Cart::destroy();
             return redirect()->route('home')->with('success', 'Commande validée.');
