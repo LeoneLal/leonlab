@@ -35,7 +35,11 @@ class UserController extends Controller
         $user->email = $request->get('email');
         $user->password = Hash::make($request->get('password'));
         $user->save();
-        return redirect()->route('home');
+
+        if( \Auth::user()->role == 1)
+            return redirect()->route('home');
+        else
+            return redirect()->route('jeux.index');
     }
 
     public function edit($memberId){
