@@ -26,6 +26,6 @@ class Jeu extends Model
 
     public function console()
     {
-        return $this->belongsTo(console::class, "id");
+        return $this->belongsTo(console::class, "console_id");
     }
 }

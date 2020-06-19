@@ -199,6 +199,7 @@ a {
 
 .main .center .consoles .console p {
     height: fit-content;
+    margin: 0;
 }
 
 .main .center .games {
@@ -303,6 +304,7 @@ a {
     align-items: center;
     justify-content: center;
 }
+
 .py-4 .left .solde h2 {
     margin-top: 0;
 }
@@ -385,6 +387,7 @@ a {
     margin-bottom: 6%;
     margin-right: 25px;
 }
+
 .py-4 .right .jeux .jeu {
     display: flex;
     background-color: rgb(255, 255, 255);
@@ -426,36 +429,6 @@ a {
     width: auto;
     height: 50%;
     margin-left: 10%;
-}
-
-.container .row img {
-    height: 250px;
-    border-radius: 50px;
-}
-
-.block {
-    width: 100%;
-    background: rgba(255, 255, 255, 0.25);
-    border-radius: 50px;
-    margin: auto;
-    margin-top: 50px;
-    padding: 30px;
-}
-
-.comments {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: 100px 100px 100px;
-    grid-auto-flow: row;
-}
-
-.panier {
-    display: flex;
-    justify-content: center;
-}
-
-.panier .alert p {
-    margin: 0;
 }
 
 @media (min-width: 1800px) {

@@ -16,6 +16,7 @@
     <link href="{{ asset('fa/css/all.css') }}" rel="stylesheet"/>
     <link href="{{ asset('css/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet" />
     <link href="{{ asset('css/style.css') }}" rel="stylesheet" />
+    <link href="{{ asset('css/game.css') }}" rel="stylesheet" />
   </head>
   <body>
         <div class="header">
@@ -57,7 +58,6 @@
             </div>
             @endif
         </div>
-
         <div class="main">
             <div class="container">
                 <div class="row">
@@ -66,19 +66,19 @@
                         alt="{{ $jeu->nom }}"
                     />
                     <div class="column">
-                        <p><b>{{ $jeu->nom }}</b></p>
+                        <p class="name-game">{{ $jeu->nom }}</p>
                         <div class="console">
-                            <div class="logo">
+                            <div class="console-img">
                                 <img
                                     src="../../images/{{ $jeu->console['slug'] }}"
                                     alt="{{ $jeu->console['console'] }}"
-                                />
+                                />    
                             </div>
                             <p><b>{{ $jeu->console['console'] }}</b></p>
                         </div>
                         <p>38 commentaires</p>
                         <div class="panier">
-                            <p>{{ $jeu->prix }}€</p>
+                            <p class="price">{{ $jeu->prix }}€</p>
                             <form action="{{ route('cart.store')}}" method="POST">
                                 @csrf
                                 <input
@@ -111,12 +111,31 @@
                     <p>{{ $jeu->description }}</p>
                 </div>
                 <div class="block">
-                    <h3>Avis</h3>
+                    <div class="row">
+                        <h3>Avis</h3>
+                        <p>Rédiger un avis</p>
+                    </div>
                     <div class="comments">
-                        <p>1</p>
-                        <p>2</p>
-                        <p>3</p>
-                        <p>4</p>
+                        <div class="comment">
+                            <P>Pseudo</p>
+                            <p>Date</p>
+                            <p>Avis</p>
+                        </div>
+                        <div class="comment">
+                            <P>Pseudo</p>
+                            <p>Date</p>
+                            <p>Avis</p>
+                        </div>
+                        <div class="comment">
+                            <P>Pseudo</p>
+                            <p>Date</p>
+                            <p>Avis</p>
+                        </div>
+                        <div class="comment">
+                            <P>Pseudo</p>
+                            <p>Date</p>
+                            <p>Avis</p>
+                        </div>
                     </div>
                 </div>
             </div>
