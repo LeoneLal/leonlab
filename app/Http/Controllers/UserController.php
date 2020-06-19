@@ -33,7 +33,7 @@ class UserController extends Controller
         $user = User::where('id', \Auth::user()->id)->first();
         $user->name = $request->get('name');
         $user->email = $request->get('email');
-        $user->password = $request->get('password');
+        $user->password = Hash::make($request->get('password'));
         $user->save();
         return redirect()->route('home');
     }
