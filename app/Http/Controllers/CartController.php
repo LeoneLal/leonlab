@@ -128,10 +128,10 @@ class CartController extends Controller
             $user->save(); 
     
             Cart::destroy();
-            return redirect()->route('admin.index')->with('success', 'Commande validée.');
+            return redirect()->route('home')->with('success', 'Commande validée.');
 
         }else{
-            return redirect()->route('admin.index');
+            return redirect()->route('home');
         }
         
     }
