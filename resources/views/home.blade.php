@@ -3,6 +3,11 @@
 @section('content')
 
 <div class="left">
+@if (session('success'))
+        <div class="alert alert-success">
+          {{session('success')}}
+        </div>
+@endif
   <div class="solde">
     <h2>Solde</h2>
     <p>{{ $user->solde }} €</p>
