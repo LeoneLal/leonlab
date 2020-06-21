@@ -10,7 +10,7 @@
                 <i class="fas fa-search"></i>
             </button>
         </form>
-      </div>
+    </div>
 
     @if (Route::has('login'))
     <div class="top-right links">

@@ -19,6 +19,11 @@ a {
     text-decoration: none;
 }
 
+a:hover {
+    text-decoration: none;
+    color: #dea081;
+}
+
 /*MENU*/
 
 .menu .icons a {
@@ -78,6 +83,7 @@ a {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+    margin-bottom: 50px;
 }
 
 .top-left {
@@ -90,7 +96,7 @@ a {
 .top-left .link .logo {
     width: auto;
     height: 80px;
-    margin-left: 15%;
+    margin-left: 50px;
 }
 
 .top-center {
@@ -169,7 +175,8 @@ a {
     background-color: rgba(255, 255, 255, 0.2);
     border-radius: 50px;
     height: fit-content;
-    margin-left: 2%;
+    margin: 20px;
+    padding: 20px;
 }
 
 .main .center .consoles .console {
@@ -181,9 +188,10 @@ a {
 
 .main .center .consoles h2 {
     text-align: center;
+    margin: 20px;
 }
 
-.main .center .consoles .console .logo {
+.main .center .consoles .console .console-img {
     background-color: white;
     border-radius: 100%;
     width: fit-content;
@@ -208,18 +216,18 @@ a {
     justify-content: center;
     flex: 4;
     height: fit-content;
+    margin-bottom: 30px;
 }
 
 .main .center .games .game {
     text-align: center;
+    margin-bottom: 30px;
 }
 
 .main .center .games img {
-    width: 250px;
-    height: auto;
-    padding: 5px;
-    padding-left: 10px;
-    padding-right: 10px;
+    width: auto;
+    height: 250px;
+    margin-bottom: 1rem;
 }
 
 .main .center .games p {
@@ -427,8 +435,8 @@ a {
 
 .logo {
     width: auto;
-    height: 50%;
-    margin-left: 10%;
+    height: 80px;
+    margin-left: 50px;
 }
 
 @media (min-width: 1800px) {

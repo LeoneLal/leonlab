@@ -68,6 +68,12 @@ Route::post('/cart/pay', 'CartController@pay')->name('cart.pay');
 Route::get('/videpanier', function(){ Cart::destroy(); });
 
 /**
+ * Comments routes
+ */
+Route::post('/comments/create', 'CommentsController@store')->name('comments.create');
+Route::post('/comments/store', 'CommentsController@store')->name('comments.store');
+
+/**
  * Route receipt
  */
 Route::get('/pdf', 'PdfController@receipt')->name('pdf.receipt');
