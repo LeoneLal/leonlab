@@ -62,7 +62,7 @@ class JeuxController extends Controller
 
         $consoles = Console::all();
         $game = Jeu::where('id', $gameId)->with('console')->first();
-        dd($game);
+    
         if( \Auth::user()->role == 1)
             return view('jeux.edit', compact('game', 'consoles'));
         else
