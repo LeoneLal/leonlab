@@ -9,6 +9,7 @@ use App\Console;
 use App\User;
 use App\Fiche;
 use App\Ligne;
+use App\Comment;
 use Carbon\Carbon;
 
 
@@ -18,12 +19,10 @@ class AdminController extends Controller
         $nb_sales = Ligne::all()->count();
         $nb_users = User::all()->count();
         $nb_jeux = Jeu::all()->count();
-        /**
-         * Data sur les 7 derniers jours
-         
-        $last_users = User::where( 'created_at', '>', Carbon::now()->subDays(7))
-           ->count();
-        */
+        
+        $ca = Fiche::sum('prix_total');
+        $month_ca = Fiche::where( 'created_at', '>', Carbon::now()->subDays(30))->sum('prix_total');
+        $weeks_ca = Fiche::where( 'created_at', '>', Carbon::now()->subDays(30))->sum('prix_total');
         
         $chart = new SampleChart;
         $chart->title('Graphique global');
@@ -32,7 +31,7 @@ class AdminController extends Controller
             ->color("#DFAEFF")
             ->backgroundcolor("rgb(171, 235, 244)");
         if( \Auth::user()->role == 1)
-            return view('admin.index', compact('chart'));
+            return view('admin.index', compact('chart', 'ca', 'month_ca', 'weeks_ca'));
         else
             return redirect()->route('jeux.index');
         
