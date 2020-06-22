@@ -55,7 +55,7 @@
         </div>
         <div class="date">
           <p>{{ $game->Card->created_at }}</p>
-          <a href="{{ route('pdf.download', $game->Card->id) }}"
+          <a href="{{ route('pdf.download', $game->Card->id) }}" target="blank"
             ><p><b>Facture</b><i class="fas fa-file-download"></i></p
           ></a>
         </div>

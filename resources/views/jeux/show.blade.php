@@ -113,7 +113,7 @@
                 <div class="block">
                     <div class="row">
                         <h3>Avis</h3>
-                        <p>Rédiger un avis</p>
+                        <a href="{{ route('comments.create') }}">Rédiger un avis</a>
                     </div>
                     <div class="comments">
                         <div class="comment">

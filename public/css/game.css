@@ -39,11 +39,6 @@
     font-size: small;
 }
 
-.price, .name-game{
-    font-size: x-large;
-    font-weight: bold;
-}
-
 .panier {
     display: flex;
     flex-direction: row;
@@ -52,6 +47,11 @@
 
 .panier p {
     margin: 0;
+}
+
+.price, .name-game{
+    font-size: x-large;
+    font-weight: bold;
 }
 
 .console img {
@@ -84,7 +84,6 @@
 
 .btn-dark {
     margin-left: 20px;
-    margin-right: 20px;
 }
 
 .btn-purchase {
@@ -94,9 +93,10 @@
 
 .alert {
     margin-bottom: 0;
+    margin-left: 20px;
 }
 
-.block .row h3, .block .row p {
+.block .row h3, .block .row a {
     margin: 0;
 }
 
