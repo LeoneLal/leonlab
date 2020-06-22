@@ -30,10 +30,15 @@ body {
 .all .jeux .jeu .left {
     display: flex;
     color: black;
+    width: 350px;
 }
 
 .all .jeux .jeu .left img {
     height: 100%;
+}
+
+.all .jeux .jeu .left .left_m {
+    padding-left: 2%;
 }
 
 .all .jeux .jeu .left .left_m .logo {
@@ -117,6 +122,7 @@ body {
         max-width: 500px;
         min-width: 500px;
         padding: 3%;
+        margin-bottom: 15%;
     }
 }
 

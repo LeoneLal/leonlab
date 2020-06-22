@@ -50,6 +50,7 @@
 
 .games a button {
     margin: 1%;
+    width: max-content;
 }
 
 .games .game {
@@ -90,5 +91,3 @@
 .members .member * {
     flex: 1;
 }
-
-

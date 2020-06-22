@@ -11,6 +11,14 @@ body {
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-size: cover;
+}
+
+input {
+    outline: none;
+    background: none;
+}
+
+input:focus {
     outline: none;
 }
 
@@ -85,6 +93,7 @@ a {
     justify-content: flex-start;
     align-items: center;
     flex: 1;
+    max-width: 640px;
 }
 
 .top-left .link .logo {
@@ -535,6 +544,7 @@ a {
     .main .center .consoles .all_c {
         display: flex;
         flex-wrap: wrap;
+        justify-content: center;
     }
 
     .main .center .consoles .all_c .console {
