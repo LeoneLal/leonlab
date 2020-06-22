@@ -66,11 +66,19 @@
             </div>
         </a>
     </nav>
-    <div class="graphs">
-        <div class="graph">
-            {!! $chart->container() !!}
+    <div class="main">
+        <div class="graphs">
+            <div class="graph">
+                {!! $chart->container() !!}
+            </div>
+        </div>
+        <div class="stats">
+            <p>Chiffre d'affaire global du site : {{ $ca }} €</p>
+            <p>Chiffre d'affaire du site sur les 30 derniers jours : {{ $month_ca }} €</p>
+            <p>Chiffre d'affaire du site sur les 7 derniers jours  : {{ $weeks_ca }} €</p>
         </div>
     </div>
+    
 
     <nav class="menu">
         <div class="icons">
