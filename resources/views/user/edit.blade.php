@@ -63,7 +63,7 @@
                 <select class="champs" id="categories" name="role">
                     <option>-- Choisir la valeur --</option>
                     <option value="1">Administrateur</option>
-                    <option value="2">Standard</option>
+                    <option value="0">Standard</option>
                 </select>
                
             </div>
