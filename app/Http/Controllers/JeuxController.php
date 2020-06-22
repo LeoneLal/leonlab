@@ -40,15 +40,15 @@ class JeuxController extends Controller
 
     public function store(Request $request)
     {
-        $jeu = new Jeu();
-        $jeu->nom = $request->get('name');
-        $jeu->slug = $request->get('picture');
-        $jeu->description = $request->get('description');
-        $jeu->console_id = $request->get('console');
-        $jeu->prix = $request->get('prix');
-        $jeu->stock = $request->get('stock');
-        $jeu->save();
-        return redirect()->route('jeux.create');
+        $game = new Jeu();
+        $game->nom = $request->get('name');
+        $game->slug = $request->get('picture');
+        $game->description = $request->get('description');
+        $game->console_id = $request->get('console');
+        $game->prix = $request->get('prix');
+        $game->stock = $request->get('stock');
+        $game->save();
+        return redirect()->route('admin.games');
     }
 
     public function show($jeuId)
