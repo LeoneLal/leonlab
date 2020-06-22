@@ -26,7 +26,10 @@ class ConsolesController extends Controller
         $console->console = $request->get('console');
         $console->slug = $request->get('picture');
         $console->save();
-        return redirect()->route('admin.index');
+        if( \Auth::user()->role == 1)
+            return redirect()->route('admin.consoles');
+        else
+            return redirect()->route('jeux.index');
 
     }
 
