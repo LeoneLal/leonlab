@@ -46,6 +46,11 @@
       @endif
     </div>
     <div class="main">
+      @if($errors->has('q'))
+        <div class="alert alert-warning">
+          <p>3 caractères minimum</p>
+        </div>
+      @endif
       @if (session('success'))
         <div class="alert alert-success">
           {{session('success')}}
@@ -97,7 +102,7 @@
       </div>
       
     </div> 
-    <div class="footer">
+<div class="footer">
   <img
     src="{{ asset('images/facebook.png') }}"
     alt="Facebook"
@@ -116,7 +121,7 @@
 </div>
     <nav class="menu">
         <div class="icons">
-            <a href="index.html">
+            <a href="{{ url('/') }}">
                 <div class="icon active">
                     <p><i class="fas fa-home"></i></p>
                     <span>Home</span>
