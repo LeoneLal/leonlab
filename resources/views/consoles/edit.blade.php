@@ -37,17 +37,18 @@
         </div>
 
         <div class="formulaire">
-            <h1 class="display-4">Ajouter une console</h1>
-            <form method="POST" action="{{ route('consoles.store') }}">
+            <h1 class="display-4">Modifier une console</h1>
+            <form method="POST" action="{{ route('consoles.update', $console->id) }}">
                 @csrf
+                @method('PUT')
                 <div class="form-group">
                     <label for="nomJeu">Nom de la console</label>
-                    <input type="text" id="id="nomJeu"" name="console" class="form-control">
+                    <input type="text" id="id="nomJeu"" name="console" class="form-control" value="{{ $console->console }}">
                 </div>
 
                 <div class="form-group">
                     <label for="image">Image du jeu</label>
-                    <input type="file" class="form-control-file" name="picture" id="image">
+                    <input type="file" class="form-control-file" name="picture" id="image" value="{{ $console->slug }}">
                 </div>
 
                 <div class="bouton">           
