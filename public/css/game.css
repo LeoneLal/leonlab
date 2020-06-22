@@ -39,7 +39,21 @@
     font-size: small;
 }
 
-.price, .name-game{
+.column .opinion {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.column .opinion .note {
+    color: black;
+    font-weight: bold;
+    border-bottom: 2px solid #ffde55;
+    width: fit-content;
+}
+
+.price,
+.name-game {
     font-size: x-large;
     font-weight: bold;
 }
@@ -59,7 +73,7 @@
     height: auto;
 }
 
-.console { 
+.console {
     display: flex;
     align-items: center;
 }
@@ -96,7 +110,8 @@
     margin-bottom: 0;
 }
 
-.block .row h3, .block .row p {
+.block .row h3,
+.block .row p {
     margin: 0;
 }
 

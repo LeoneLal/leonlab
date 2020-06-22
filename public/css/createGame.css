@@ -18,7 +18,6 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 500px;
 }
 
 .formulaire form {
@@ -29,7 +28,12 @@ body {
     display: flex;
     flex: 1;
     justify-content: space-between;
-    margin-top: 10%;
+    margin-top: 5%;
+}
+
+textarea.form-control {
+    border: 2px solid #ffde55;
+    margin-left: 170px;
 }
 
 .formulaire .form-group input,
