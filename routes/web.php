@@ -46,6 +46,9 @@ Route::get('/user/{id}/delete', 'UserController@delete')->name('user.delete');
 Route::get('/console/{id}', 'ConsolesController@search')->name('consoles.search');
 Route::get('/consoles/create', 'ConsolesController@create')->name('consoles.create');
 Route::post('/consoles/store', 'ConsolesController@store')->name('consoles.store');
+Route::get('/consoles/{id}/edit', 'ConsolesController@edit')->name('consoles.edit');
+Route::put('/consoles/{id}/update', 'ConsolesController@update')->name('consoles.update');
+Route::get('/consoles/{id}/delete', 'ConsolesController@delete')->name('consoles.delete');
 
 /**
  * Games Routes
