@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Jeu;
 use App\Console;
+use App\Comment;
 
 class JeuxController extends Controller
 {
@@ -53,9 +54,16 @@ class JeuxController extends Controller
 
     public function show($jeuId)
     {
+        
         $console =  Console::all();
         $jeu = Jeu::where('id', $jeuId)->with('console')->first();
-        return view('jeux.show', compact('jeu', 'console'));
+
+        $opinions = Comment::where('jeu_id', $jeuId)->get();
+        
+        $number = Comment::where('jeu_id', $jeuId)->avg('note');
+        $note = number_format( $number, 2);
+
+        return view('jeux.show', compact('jeu', 'console', 'note'));
     }
 
     public function edit($gameId){
@@ -79,7 +87,7 @@ class JeuxController extends Controller
         $game->prix = $request->get('prix');
         $game->stock = $request->get('stock');
         $game->save();
-        return redirect()->route('jeux.create');
+        return redirect()->route('admin.games');
         
     }
 
