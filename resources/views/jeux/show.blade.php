@@ -77,6 +77,7 @@
                             <p><b>{{ $jeu->console['console'] }}</b></p>
                         </div>
                         <p>38 commentaires</p>
+                        <img src="" alt="Note" />
                         <div class="panier">
                             <p class="price">{{ $jeu->prix }}€</p>
                             <form class="btn-purchase" action="{{ route('cart.store')}}" method="POST">
