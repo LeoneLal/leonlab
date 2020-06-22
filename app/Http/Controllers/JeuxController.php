@@ -57,13 +57,12 @@ class JeuxController extends Controller
         
         $console =  Console::all();
         $jeu = Jeu::where('id', $jeuId)->with('console')->first();
-
-        $opinions = Comment::where('jeu_id', $jeuId)->get();
         
         $number = Comment::where('jeu_id', $jeuId)->avg('note');
         $note = number_format( $number, 2);
 
-        return view('jeux.show', compact('jeu', 'console', 'note'));
+        $comments = Comment::where('jeu_id', $jeuId)->with('User')->get();
+        return view('jeux.show', compact('jeu', 'console', 'comments', 'note'));
     }
 
     public function edit($gameId){
