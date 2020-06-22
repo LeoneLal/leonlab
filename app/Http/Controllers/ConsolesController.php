@@ -29,4 +29,23 @@ class ConsolesController extends Controller
         return redirect()->route('admin.index');
 
     }
+
+    public function edit($consoleId){
+
+        $console = Console::where('id', $consoleId)->first();
+        return view('consoles.edit', compact('console'));
+    }
+
+    public function update(Request $request, $consoleId)
+    {
+        $console = Console::where('id', $consoleId)->first();
+        $console->console = $request->get('console');
+        $console->slug = $request->get('picture');
+        $console->save();
+        if( \Auth::user()->role == 1)
+            return redirect()->route('admin.consoles');
+        else
+            return redirect()->route('jeux.index');
+    }
+
 }
