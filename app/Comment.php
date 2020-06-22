@@ -8,7 +8,7 @@ class Comment extends Model
 {
     public $timestamps = false;
 
-    protected $name = 'avis';
+    protected $table = 'avis';
 	protected $fillable = [
 		'id',
 		'user_id',

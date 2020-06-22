@@ -76,8 +76,10 @@
                             </div>
                             <p><b>{{ $jeu->console['console'] }}</b></p>
                         </div>
-                        <p>38 commentaires</p>
-                        <img src="" alt="Note" />
+                        <div class="note">
+                            <a href="#avis">38 commentaires</a>
+                            <img src="{{ asset('images/stars.png') }}" alt="Note" />
+                        </div>
                         <div class="panier">
                             <p class="price">{{ $jeu->prix }}€</p>
                             <form class="btn-purchase" action="{{ route('cart.store')}}" method="POST">
@@ -116,7 +118,7 @@
                         <h3>Avis</h3>
                         <a href="{{ route('comments.create') }}">Rédiger un avis</a>
                     </div>
-                    <div class="comments">
+                    <div id="avis" class="comments">
                         <div class="comment">
                             <p class="username">Pseudo</p>
                             <p>21/06/2020</p>
