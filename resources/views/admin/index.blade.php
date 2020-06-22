@@ -51,6 +51,14 @@
                 <div class="on"></div>
             </div>
         </a>
+
+        <a href="{{route('admin.consoles')}}">
+            <div>
+                <p>Consoles</p>
+                <div class="on"></div>
+            </div>
+        </a>
+
         <a href="{{route('admin.members')}}">
             <div>
                 <p>Membres</p>
