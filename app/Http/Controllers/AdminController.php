@@ -5,7 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Charts\SampleChart;
 use App\Jeu;
+use App\Console;
 use App\User;
+use App\Fiche;
 use App\Ligne;
 use Carbon\Carbon;
 
@@ -55,6 +57,12 @@ class AdminController extends Controller
             return view('admin.games', compact('games_chart', 'games'));
         else
             return redirect()->route('jeux.index');
+    }
+
+    public function consoles(){
+        $consoles = Console::all();
+        return view('admin.consoles', compact('consoles'));
+
     }
 
     public function members(){
