@@ -65,7 +65,7 @@
                                     </a>
 
                                     @if ( Auth::user()->role == 1 )
-                                    <a class="dropdown-item" href="{{ route('admin.index') }}">{{ __('Admin') }}</a>
+                                    <a class="dropdown-item" href="{{ route('admin.index') }}">{{ __('Admin Panel') }}</a>
                                     @endif
 
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
