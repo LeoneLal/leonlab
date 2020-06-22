@@ -44,6 +44,7 @@
                 <div class="on"></div>
             </div>
         </a>
+
         <a href="{{route('admin.games')}}">
             <div>
                 <p>Jeux</p>
@@ -76,6 +77,46 @@
             </div>
         @endforeach
     </div>
+    <nav class="menu">
+        <div class="icons">
+            <a href="{{ url('/') }}">
+                <div class="icon active">
+                    <p><i class="fas fa-home"></i></p>
+                    <span>Home</span>
+                </div>
+            </a>
+            @if (Route::has('login'))
+             @auth
+             <a href="{{ url('/panier') }}">
+                <div class="icon">
+                    <p><i class="fas fa-shopping-cart"></i></p>
+                    <span>Panier</span>
+                </div>
+            </a>
+            <a href="{{ url('/home') }}">
+                <div class="icon">
+                    <p><i class="fas fa-user"></i></p>
+                    <span>Profile</span>
+                </div>
+            </a>
+             @else
+            <a href="{{ route('login') }}">
+                <div class="icon">
+                    <p><i class="fas fa-sign-in-alt"></i></p>
+                    <span>Sign in</span>
+                </div>
+            </a>
+            @if (Route::has('register'))
+            <a href="{{ route('register') }}">
+                <div class="icon">
+                    <p><i class="fas fa-user-plus"></i></p>
+                    <span>Sign up</span>
+                </div>
+            </a>
+          @endif @endauth
+        </div>
+        @endif
+    </nav>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js" charset="utf-8"></script>
     {!! $members_chart->script() !!}
     
