@@ -21,5 +21,10 @@ class Comment extends Model
     public function User()
 	{
 		return $this->belongsTo(User::class, 'user_id');
+    }
+    
+    public function Game()
+	{
+		return $this->belongsTo(Jeu::class, 'jeu_id');
 	}
 }

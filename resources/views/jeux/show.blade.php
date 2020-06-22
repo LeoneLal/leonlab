@@ -119,26 +119,14 @@
                         <a href="{{ route('comments.create') }}">Rédiger un avis</a>
                     </div>
                     <div id="avis" class="comments">
+                    @foreach($comments as $comment)
                         <div class="comment">
-                            <p class="username">Pseudo</p>
-                            <p>21/06/2020</p>
-                            <p>Avis</p>
+                            <p class="username">{{ $comment->User->name }}</p>
+                            <p>{{ $comment->created_at->format('d/m/Y') }}</p>
+                            <p>{{ $comment->note }} / 5</p>
+                            <p>{{ $comment->avis }}</p>
                         </div>
-                        <div class="comment">
-                            <p class="username">Pseudo</p>
-                            <p>21/06/2020</p>
-                            <p>Avis</p>
-                        </div>
-                        <div class="comment">
-                            <p class="username">Pseudo</p>
-                            <p>21/06/2020</p>
-                            <p>Avis</p>
-                        </div>
-                        <div class="comment">
-                            <p class="username">Pseudo</p>
-                            <p>21/06/2020</p>
-                            <p>Avis</p>
-                        </div>
+                    @endforeach
                     </div>
                 </div>
             </div>

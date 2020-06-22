@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Jeu;
 use App\Console;
+use App\Comment;
 
 class JeuxController extends Controller
 {
@@ -55,7 +56,8 @@ class JeuxController extends Controller
     {
         $console =  Console::all();
         $jeu = Jeu::where('id', $jeuId)->with('console')->first();
-        return view('jeux.show', compact('jeu', 'console'));
+        $comments = Comment::where('jeu_id', $jeuId)->with('User')->get();
+        return view('jeux.show', compact('jeu', 'console', 'comments'));
     }
 
     public function edit($gameId){
