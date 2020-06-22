@@ -83,7 +83,7 @@ class JeuxController extends Controller
         
     }
 
-    //Delete a contact from the company
+    //Delete a game
     public function delete($jeuId){
         $jeu = Jeu::where('id', $jeuId)->first();
         $jeu->delete();
