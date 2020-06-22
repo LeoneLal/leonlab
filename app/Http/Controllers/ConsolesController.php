@@ -48,4 +48,15 @@ class ConsolesController extends Controller
             return redirect()->route('jeux.index');
     }
 
+    //Delete a console
+    public function delete($consoleId){
+        $console = Console::where('id', $consoleId)->first();
+        $console->delete();
+        if( \Auth::user()->role == 1)
+            return redirect()->route('admin.consoles');
+        else
+            return redirect()->route('jeux.index');
+    }
+
+
 }
