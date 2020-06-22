@@ -76,10 +76,18 @@
                             </div>
                             <p><b>{{ $jeu->console['console'] }}</b></p>
                         </div>
-                        <p>38 commentaires</p>
+                        <div class="opinion">
+                            <p>38 commentaires</p>
+                            @if($note != 0)
+                            <p class="note">Note globale : {{ $note }} / 5</p>
+                            @else
+                            <p class="note">Pas encore de note pour ce jeu</p>
+                            @endif
+                        </div>
                         <div class="panier">
                             <p class="price">{{ $jeu->prix }}€</p>
-                            <form class="btn-purchase" action="{{ route('cart.store')}}" method="POST">
+                            <form class="
+                             btn-purchase" action="{{ route('cart.store')}}" method="POST">
                                 @csrf
                                 <input
                                     type="hidden"
