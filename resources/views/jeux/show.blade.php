@@ -79,7 +79,7 @@
                         <p>38 commentaires</p>
                         <div class="panier">
                             <p class="price">{{ $jeu->prix }}€</p>
-                            <form action="{{ route('cart.store')}}" method="POST">
+                            <form class="btn-purchase" action="{{ route('cart.store')}}" method="POST">
                                 @csrf
                                 <input
                                     type="hidden"
@@ -87,12 +87,12 @@
                                     value="{{ $jeu->id }}"
                                 />
                                 @if($jeu->stock > 0 && $jeu->stock <= 3)
-                                <div class="alert alert-warning">
-                                    <p>Plus que {{ $jeu->stock }} jeux en stock !</p>
-                                </div>
                                 <button type="submit" class="btn btn-dark">
                                     Ajouter au panier
                                 </button>
+                                <div class="alert alert-warning">
+                                    <p>Plus que {{ $jeu->stock }} jeux en stock !</p>
+                                </div>
                                 @elseif($jeu->stock > 0)
                                 <button type="submit" class="btn btn-dark">
                                     Ajouter au panier
@@ -108,7 +108,7 @@
                 </div>
                 <div class="block">
                     <h3>Description</h3>
-                    <p>{{ $jeu->description }}</p>
+                    <p class="description">{{ $jeu->description }}</p>
                 </div>
                 <div class="block">
                     <div class="row">
@@ -117,23 +117,23 @@
                     </div>
                     <div class="comments">
                         <div class="comment">
-                            <P>Pseudo</p>
-                            <p>Date</p>
+                            <p class="username">Pseudo</p>
+                            <p>21/06/2020</p>
                             <p>Avis</p>
                         </div>
                         <div class="comment">
-                            <P>Pseudo</p>
-                            <p>Date</p>
+                            <p class="username">Pseudo</p>
+                            <p>21/06/2020</p>
                             <p>Avis</p>
                         </div>
                         <div class="comment">
-                            <P>Pseudo</p>
-                            <p>Date</p>
+                            <p class="username">Pseudo</p>
+                            <p>21/06/2020</p>
                             <p>Avis</p>
                         </div>
                         <div class="comment">
-                            <P>Pseudo</p>
-                            <p>Date</p>
+                            <p class="username">Pseudo</p>
+                            <p>21/06/2020</p>
                             <p>Avis</p>
                         </div>
                     </div>

@@ -51,7 +51,7 @@
           @foreach($consoles as $console)   
           <a href={{route('consoles.search', $console->id)}}>   
             <div class="console">
-              <div class="logo">
+              <div class="console-img">
                 <img src="../images/{{ $console->slug  }}" alt="{{ $console->console }}" />
               </div>
             <p><b>{{ $console->console }}</b></p>

@@ -43,7 +43,7 @@
                 @csrf
                 <div class="form-group">
                     <label for="nomJeu">Nom de la console</label>
-                    <input type="text" id="id="nomJeu"" name="console" class="form-control">
+                    <input type="text" id="nomJeu" name="console" class="form-control">
                 </div>
 
                 <div class="form-group">
