@@ -34,6 +34,7 @@ Route::get('/admin/opinion', 'AdminController@opinion')->name('admin.opinion');
 /**
  * User routes
  */
+Route::get('/user/{id}/show', 'UserController@show')->name('user.show');
 Route::get('/user/edit_solde', 'UserController@edit_solde')->name('user.edit_solde');
 Route::put('/user/update_solde', 'UserController@update_solde')->name('user.update_solde');
 Route::put('/user/update_profil', 'UserController@update_profil')->name('user.update_profil');
