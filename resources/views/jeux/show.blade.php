@@ -127,7 +127,7 @@
                     @foreach($comments as $comment)
                         <div class="comment">
                             <p class="username">{{ $comment->User->name }}</p>
-                            <p>{{ $comment->created_at->format('d/m/Y') }}</p>
+                            <p>{{ \Carbon\Carbon::parse($comment->created_at)->format('d/m/Y')}}</p>
                             <p>{{ $comment->note }} / 5</p>
                             <p>{{ $comment->avis }}</p>
                         </div>
