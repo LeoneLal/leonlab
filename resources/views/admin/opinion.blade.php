@@ -28,6 +28,7 @@
       <div class="top-right links">
         @auth
         <a href="{{ url('/home') }}">Mon compte</a>
+        <a href="{{ route('cart.index') }}"><img src="{{ asset('images/panier.png') }}" alt="Panier"> <span class="badge badge-pill badge-dark ">{{ Cart::count()}}</span></a>
         @else
         <a href="{{ route('login') }}">Login</a>
         @if (Route::has('register'))
