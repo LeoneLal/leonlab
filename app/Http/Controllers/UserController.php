@@ -5,9 +5,24 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use App\User;
+use App\Fiche;
+use App\Ligne;
 
 class UserController extends Controller
 {
+
+    public function show($userId){
+        $user =  User::where( 'id', $userId)->first();
+        $line = Ligne::whereHas('Card', function($query) use ($userId){
+            return $query->where('user_id', $userId);
+        })->with('Game')->with('Card')->get();
+
+        return view('user.show', compact('user', 'line'));
+    }
+
+    /**
+     * Solde edition
+     */
     public function edit_solde(){  
         $user = User::where('id', \Auth::user()->id)->first();
         return view('user.edit_solde', compact('user'));
@@ -27,7 +42,9 @@ class UserController extends Controller
         $user->save();
         return redirect()->route('home');
     }
-
+    /**
+     * Profile edition by the member
+     */
     public function update_profil(Request $request){
         
         $user = User::where('id', \Auth::user()->id)->first();
@@ -42,6 +59,9 @@ class UserController extends Controller
             return redirect()->route('jeux.index');
     }
 
+    /**
+     * Profile edition by the administrator
+     */
     public function edit($memberId){
         $user = User::where('id', $memberId)->first();
         return view('user.edit', compact('user'));
@@ -61,6 +81,9 @@ class UserController extends Controller
             return redirect()->route('jeux.index');
     }
 
+    /**
+     * Deleting a member
+     */
     public function delete($memberId){
         $member = User::where('id', $memberId)->first();
         $member->delete();

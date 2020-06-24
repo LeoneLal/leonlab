@@ -57,6 +57,8 @@ class JeuxController extends Controller
         
         $console =  Console::all();
         $jeu = Jeu::where('id', $jeuId)->with('console')->first();
+
+        
         
         $number = Comment::where('jeu_id', $jeuId)->avg('note');
         $note = number_format( $number, 2);
