@@ -119,16 +119,17 @@
                     <p class="description">{{ $jeu->description }}</p>
                 </div>
                 <div class="block">
-                    <div class="row">
-                        <h3>Avis</h3>
-                        <a href="{{ route('comments.create') }}">Rédiger un avis</a>
-                    </div>
+                    <h3>Avis</h3>
                     <div id="avis" class="comments">
                     @foreach($comments as $comment)
                         <div class="comment">
-                            <p class="username">{{ $comment->User->name }}</p>
-                            <p>{{ \Carbon\Carbon::parse($comment->created_at)->format('d/m/Y')}}</p>
-                            <p>{{ $comment->note }} / 5</p>
+                            <div class="cmmnt-header">
+                                <div>
+                                    <p class="username">{{ $comment->User->name }}</p>
+                                    <p>{{ \Carbon\Carbon::parse($comment->created_at)->format('d/m/Y')}}</p>
+                                </div>
+                                <p>{{ $comment->note }} / 5</p>
+                            </div>
                             <p>{{ $comment->avis }}</p>
                         </div>
                     @endforeach

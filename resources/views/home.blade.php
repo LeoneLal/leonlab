@@ -52,9 +52,10 @@
       <div class="infos">
         <div class="titre">
           <h3>{{$game->Game->nom}}</h3>
+          <a href="{{ route('comments.create') }}">Rédiger un avis</a>
         </div>
         <div class="date">
-          <p>{{ $game->Card->created_at }}</p>
+          <p>{{ \Carbon\Carbon::parse($game->Card->created_at)->format('d/m/Y')}}</p>
           <a href="{{ route('pdf.download', $game->Card->id) }}" target="blank"
             ><p><b>Facture</b><i class="fas fa-file-download"></i></p
           ></a>
