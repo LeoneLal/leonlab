@@ -16,6 +16,10 @@ class Fiche extends Model
 		'user_id',
 		'created_at',
     ];
-    
+	
+	public function Line()
+    {
+        return $this->hasMany(Ligne::class);
+    }
     
 }

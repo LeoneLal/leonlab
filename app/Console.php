@@ -20,4 +20,9 @@ class Console extends Model
     {
         return $this->hasMany(jeu::class);
     }
+
+    public function Card()
+	{
+		return $this->belongsTo(Fiche::class, 'fiche_id');
+	}
 }
