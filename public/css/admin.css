@@ -9,6 +9,10 @@
     flex-direction: row;
     justify-content: space-around;
 }
+
+.navbarre i {
+    display: none;
+}
 .navbarre .actual p {
     font-weight: 800;
 }
@@ -26,12 +30,19 @@
     width: 185px;
 }
 
+.main {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
 .graphs {
     display: flex;
     flex: 1;
     flex-direction: column;
     align-items: center;
     padding-top: 100px;
+    flex: 2;
 }
 
 .graphs .graph {
@@ -41,8 +52,59 @@
     margin: 1%;
 }
 
+.stats {
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    justify-content: center;
+    align-items: flex-start;
+    padding-right: 10%;
+    background: rgba(255, 255, 255, 0.25);
+    border-radius: 50px;
+}
+
+.stats p {
+    color: black;
+}
+
+.stats b {
+    font-weight: bold;
+}
+
+@media (max-width: 1300px) {
+    .navbarre p {
+        display: none;
+    }
+    .navbarre i {
+        display: block;
+        font-size: 40px;
+        text-align: center;
+        padding-bottom: 3px;
+    }
+
+    .navbarre .on {
+        width: 100px;
+    }
+
+    .main {
+        flex-direction: column;
+    }
+
+    .stats {
+        align-items: center;
+        padding: 3%;
+        width: fit-content;
+        background: #ffffff;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+        border-radius: 50px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
 /*///////////////////////////Game part////////////////////////////////*/
 .games {
+    padding-top: 2%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -90,4 +152,28 @@
 
 .members .member * {
     flex: 1;
+}
+
+/*Partie Avis*/
+
+.all_opinions {
+    display: flex;
+    flex-direction: column;
+    flex-flow: wrap;
+    justify-content: center;
+    margin-top: 3%;
+    color: black;
+}
+
+.all_opinions .opinion {
+    margin: 2%;
+    background: #ffffff;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+    border-radius: 50px;
+    width: 500px;
+    padding-left: 30px;
+}
+
+.all_opinions p {
+    width: 400px;
 }
