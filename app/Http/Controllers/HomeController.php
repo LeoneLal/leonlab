@@ -28,7 +28,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $user =  DB::table('users')->where( 'id', \Auth::user()->id)->first();
+        $user =  User::where( 'id', \Auth::user()->id)->first();
         $line = Ligne::whereHas('Card', function($query){
             return $query->where('user_id', \Auth::user()->id);
         })->with('Game')->with('Card')->get();
