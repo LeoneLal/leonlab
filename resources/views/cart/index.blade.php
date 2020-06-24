@@ -11,9 +11,9 @@
 </head>
 <body>
     <div class="header">
-        <div class="top-left">
-            <a href="{{ url('/') }}" class="link"><img class="logo" src="{{ asset('images/logo.png') }}" alt="logo" /></a>
-        </div>
+      <div class="top-left">
+        <a href="{{ url('/') }}" class="link"><img class="logo" src="{{ asset('images/logo.png') }}" alt="logo" /></a>
+      </div>
 
       <div class="top-center">
         <form method='GET' action="{{ route('jeux.search')}}" class="d-flex mr-3">
@@ -28,13 +28,12 @@
       <div class="top-right links">
         @auth
         <a href="{{ url('/home') }}">Mon compte</a>
+        <a href="{{ route('cart.index') }}"><img src="{{ asset('images/panier.png') }}" alt="Panier"> <span class="badge badge-pill badge-dark ">{{ Cart::count()}}</span></a>
         @else
         <a href="{{ route('login') }}">Login</a>
         @if (Route::has('register'))
         <a href="{{ route('register') }}">Register</a>
         @endif @endauth
-
-        <a href="{{ route('cart.index') }}"><img src="images/panier.png" alt="Panier"> <span class="badge badge-pill badge-dark ">{{ Cart::count()}}</span></a>
       </div>
       @endif
     </div>

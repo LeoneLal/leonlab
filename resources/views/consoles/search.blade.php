@@ -20,7 +20,7 @@
   <body>
     <div class="header">
       <div class="top-left">
-        <img class="logo" src="../images/logo.png" alt="logo" />
+        <a href="{{ url('/') }}" class="link"><img class="logo" src="{{ asset('images/logo.png') }}" alt="logo" /></a>
       </div>
 
       <div class="top-center">
