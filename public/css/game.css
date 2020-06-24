@@ -39,6 +39,12 @@
     font-size: small;
 }
 
+.cmmnt-header {
+    display: flex;
+    justify-content: space-between;
+    padding-right: 20px;
+}
+
 .column .opinion {
     display: flex;
     flex-direction: column;
@@ -46,7 +52,6 @@
 }
 
 .column .opinion .note {
-    color: black;
     font-weight: bold;
     border-bottom: 2px solid #ffde55;
     width: fit-content;
@@ -96,7 +101,7 @@
     margin: 0;
 }
 
-.btn-dark {
+.btn-dark, .alert {
     margin-left: 20px;
 }
 
@@ -159,7 +164,6 @@
 .note {
     display: flex;
     align-items: center;
-    margin-bottom: 10px;
 }
 
 .note a {
