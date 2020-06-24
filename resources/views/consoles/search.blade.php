@@ -20,7 +20,7 @@
   <body>
     <div class="header">
       <div class="top-left">
-        <a href="{{ url('/') }}" class="link"><img class="logo" src="../images/logo.png" alt="logo" /></a>
+        <img class="logo" src="../images/logo.png" alt="logo" />
       </div>
 
       <div class="top-center">
@@ -36,6 +36,7 @@
       <div class="top-right links">
         @auth
         <a href="{{ url('/home') }}">Mon compte</a>
+        <a href="{{ route('cart.index') }}"><img src="../images/panier.png" alt="Panier"> <span class="badge badge-pill badge-dark ">{{ Cart::count()}}</span></a>
         @else
         <a href="{{ route('login') }}">Login</a>
         @if (Route::has('register'))
