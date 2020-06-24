@@ -39,14 +39,16 @@
     <h2 class="title" >Administration</h2>
     <nav class="navbarre">
         <a href="{{route('admin.index')}}">
-            <div>
+            <div class="actual">
+                <i class="fas fa-hand-holding-usd"></i>
                 <p>Tableau de bord</p>
                 <div class="on"></div>
             </div>
         </a>
-
+        
         <a href="{{route('admin.games')}}">
-            <div class="actual">
+            <div>
+                <i class="fas fa-dice"></i>
                 <p>Jeux</p>
                 <div class="on"></div>
             </div>
@@ -54,6 +56,7 @@
 
         <a href="{{route('admin.consoles')}}">
             <div>
+                <i class="fas fa-gamepad"></i>
                 <p>Consoles</p>
                 <div class="on"></div>
             </div>
@@ -61,6 +64,7 @@
 
         <a href="{{route('admin.members')}}">
             <div>
+                <i class="fas fa-users"></i>
                 <p>Membres</p>
                 <div class="on"></div>
             </div>
@@ -77,10 +81,20 @@
         <a href="{{ route('jeux.create') }}">
             <button class="btn btn-info">Ajouter un jeu</button>
         </a>
+        <a href="{{ route('admin.opinion') }}">
+            <button class="btn btn-info">Avis</button>
+        </a>
         @foreach($games as $game)
             <div class="game list-group-item">
                 <p>{{$game->nom}}</p>
                 <p>Stock : {{ $game->stock }}</p>
+                @foreach($games_opinions as $opinion)
+                    @if($opinion->jeu_id == $game->id )
+                        <p>Note :  {{ number_format($opinion->note, 2)}}/ 5</p>
+                        @break
+                    @endif
+                @endforeach
+                
                 <a href="{{ route('jeux.edit', $game->id) }}">
                     <button class="btn btn-success">Modifier</button>
                 </a>

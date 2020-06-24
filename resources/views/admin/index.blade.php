@@ -40,6 +40,7 @@
     <nav class="navbarre">
         <a href="{{route('admin.index')}}">
             <div class="actual">
+                <i class="fas fa-hand-holding-usd"></i>
                 <p>Tableau de bord</p>
                 <div class="on"></div>
             </div>
@@ -47,6 +48,7 @@
         
         <a href="{{route('admin.games')}}">
             <div>
+                <i class="fas fa-dice"></i>
                 <p>Jeux</p>
                 <div class="on"></div>
             </div>
@@ -54,6 +56,7 @@
 
         <a href="{{route('admin.consoles')}}">
             <div>
+                <i class="fas fa-gamepad"></i>
                 <p>Consoles</p>
                 <div class="on"></div>
             </div>
@@ -61,6 +64,7 @@
 
         <a href="{{route('admin.members')}}">
             <div>
+                <i class="fas fa-users"></i>
                 <p>Membres</p>
                 <div class="on"></div>
             </div>
@@ -72,10 +76,11 @@
                 {!! $chart->container() !!}
             </div>
         </div>
+       
         <div class="stats">
-            <p>Chiffre d'affaire global du site : {{ $ca }} €</p>
-            <p>Chiffre d'affaire du site sur les 30 derniers jours : {{ $month_ca }} €</p>
-            <p>Chiffre d'affaire du site sur les 7 derniers jours  : {{ $weeks_ca }} €</p>
+            <p>Chiffre d'affaire global du site :  <b>{{ $ca }}</b> €</p>
+            <p>Chiffre d'affaire du site sur les 30 derniers jours :  <b>{{ $month_ca }}</b> €</p>
+            <p>Chiffre d'affaire du site sur les 7 derniers jours  :  <b>{{ $weeks_ca }}</b> €</p>
         </div>
     </div>
     

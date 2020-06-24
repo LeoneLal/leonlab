@@ -39,14 +39,16 @@
     <h2 class="title" >Administration</h2>
     <nav class="navbarre">
         <a href="{{route('admin.index')}}">
-            <div>
+            <div class="actual">
+                <i class="fas fa-hand-holding-usd"></i>
                 <p>Tableau de bord</p>
                 <div class="on"></div>
             </div>
         </a>
-
+        
         <a href="{{route('admin.games')}}">
             <div>
+                <i class="fas fa-dice"></i>
                 <p>Jeux</p>
                 <div class="on"></div>
             </div>
@@ -54,13 +56,15 @@
 
         <a href="{{route('admin.consoles')}}">
             <div>
+                <i class="fas fa-gamepad"></i>
                 <p>Consoles</p>
                 <div class="on"></div>
             </div>
         </a>
-        
+
         <a href="{{route('admin.members')}}">
-            <div class="actual">
+            <div>
+                <i class="fas fa-users"></i>
                 <p>Membres</p>
                 <div class="on"></div>
             </div>
@@ -81,6 +85,9 @@
                 </a>
                 <a href="{{ route('user.delete',  $member->id) }}">
                     <button class="btn btn-danger">Supprimer</button>
+                </a>
+                <a href="{{route('user.show',  $member->id) }}">
+                    <button class="btn btn-info">Achats</button>
                 </a>
             </div>
         @endforeach
