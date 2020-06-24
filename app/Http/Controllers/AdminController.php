@@ -40,6 +40,14 @@ class AdminController extends Controller
     public function games(){
         $games = Jeu::all();
 
+        
+
+        $games_opinions = Comment::selectRaw('AVG(note) note, jeu_id')
+        ->groupBy('jeu_id')
+        ->get();
+        
+        //$note = number_format($notes, 2);
+
         $month_sales = Ligne::where( 'created_at', '>', Carbon::now()->subDays(30))->count();
         $sales = Ligne::all()->count();
         $weeks_sales = Ligne::where( 'created_at', '>', Carbon::now()->subDays(7))->count();
@@ -53,7 +61,7 @@ class AdminController extends Controller
             ->backgroundcolor("rgb(171, 235, 244)");
 
         if( \Auth::user()->role == 1)
-            return view('admin.games', compact('games_chart', 'games'));
+            return view('admin.games', compact('games_chart', 'games', 'games_opinions'));
         else
             return redirect()->route('jeux.index');
     }
@@ -82,6 +90,16 @@ class AdminController extends Controller
             return view('admin.members', compact('members_chart', 'members'));
         else
             return redirect()->route('jeux.index', compact('games'));
+    }
+
+    public function opinion(){
+
+        $games_opinions = Comment::with('Game')->with('User')->orderBy('jeu_id')->get();
+
+        if( \Auth::user()->role == 1)
+            return view('admin.opinion', compact('games_opinions'));
+        else
+            return redirect()->route('jeux.index');
     }
 
 }
