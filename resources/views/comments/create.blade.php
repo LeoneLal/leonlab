@@ -40,7 +40,7 @@
         <h1 class="display-4">Rédiger un avis</h1>
         <form method="POST" action="{{ route('comments.store') }}">
             @csrf
-            <input type="hidden" id="jeu" name="jeu" class="form-control" value="{{ $comments->jeu_id }}">
+            <input type="hidden" id="jeu" name="jeu" class="form-control" value="{{ $game->id }}">
 
             <div class="form-group">
                 <label for="note">Note / 5</label>
@@ -53,7 +53,7 @@
             </div>
 
             <div class="bouton">           
-                <button type="submit" class="btn">Submit</button>
+                <button type="submit" class="btn">Valider</button>
             </div>
         </form>
     </div>

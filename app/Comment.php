@@ -26,6 +26,6 @@ class Comment extends Model
     
     public function Game()
 	{
-		return $this->belongsTo(Jeu::class, 'jeu_id');
+		return $this->belongsTo(Ligne::class, 'jeu_id');
 	}
 }

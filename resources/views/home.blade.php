@@ -52,7 +52,7 @@
       <div class="infos">
         <div class="titre">
           <h3>{{$game->Game->nom}}</h3>
-          <a href="{{ route('comments.create') }}">Rédiger un avis</a>
+          <a href="{{ route('comments.create', $game->jeu_id) }}">Rédiger un avis</a>
         </div>
         <div class="date">
           <p>{{ \Carbon\Carbon::parse($game->Card->created_at)->format('d/m/Y')}}</p>
