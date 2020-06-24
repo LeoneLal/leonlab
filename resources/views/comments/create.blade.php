@@ -39,15 +39,17 @@
     <div class="formulaire">
         <h1 class="display-4">Rédiger un avis</h1>
         <form method="POST" action="{{ route('comments.store') }}">
-              @csrf
+            @csrf
+            <input type="hidden" id="jeu" name="jeu" class="form-control" value="{{ $comments->jeu_id }}">
+
             <div class="form-group">
-                <label for="nomJeu">Nom du jeu</label>
-                <input type="text" id="nomJeu" name="name" class="form-control">
+                <label for="note">Note / 5</label>
+                <input type="number" min="0" max="5" id="note" name="note" class="form-control">
             </div>
 
             <div class="form-group">
-                <label for="description">Description</label>
-                <input type="text" class="form-control" name="description" id="description">
+                <label for="avis">Avis</label>
+                <input type="text" class="form-control" name="avis" id="avis">
             </div>
 
             <div class="bouton">           

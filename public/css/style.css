@@ -289,13 +289,9 @@ a:hover {
 
 .py-4 h2 {
     font-family: Montserrat;
-    font-style: normal;
-    font-weight: 600;
-    font-size: 36px;
+    font-weight: bold;
     text-align: center;
-    color: #000000;
-    margin-top: 5%;
-    text-decoration: underline;
+    margin: 5%;
 }
 
 .py-4 .left {
@@ -315,7 +311,7 @@ a:hover {
     border: 0;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
     height: 200px;
-    width: 50%;
+    width: 500px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -349,7 +345,7 @@ a:hover {
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
     border-radius: 50px;
     height: 500px;
-    width: 570px;
+    width: 500px;
     border: 0;
 }
 
@@ -440,6 +436,12 @@ a:hover {
 
 .py-4 .right .jeux .jeu .infos .date i {
     margin-left: 15px;
+}
+
+.titre {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .logo {

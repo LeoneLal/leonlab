@@ -119,10 +119,7 @@
                     <p class="description">{{ $jeu->description }}</p>
                 </div>
                 <div class="block">
-                    <div class="row">
-                        <h3>Avis</h3>
-                        <a href="{{ route('comments.create') }}">Rédiger un avis</a>
-                    </div>
+                    <h3>Avis</h3>
                     <div id="avis" class="comments">
                     @foreach($comments as $comment)
                         <div class="comment">
