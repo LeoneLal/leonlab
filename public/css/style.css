@@ -299,7 +299,7 @@ a:hover {
     flex: 1;
     flex-direction: column;
     height: 800px;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     margin-left: 5%;
     margin-right: 5%;
@@ -448,6 +448,10 @@ a:hover {
     width: auto;
     height: 80px;
     margin-left: 50px;
+}
+
+.navbar {
+    margin-bottom: 30px;
 }
 
 @media (min-width: 1800px) {
