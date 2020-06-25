@@ -49,5 +49,22 @@ class CommentsController extends Controller
             
         return redirect()->route('home');
     }
+
+    public function edit($gameId){
+        $comment = Comment::where('user_id', \Auth::user()->id)
+        ->where('jeu_id', $gameId)
+        ->first();
+
+        return view('comments.edit', compact('comment'));
+    }
+
+    public function update(Request $request, $commentId){
+
+        $comment =  Comment::where('id', $commentId)->first();
+        $comment->note = $request->get('note');
+        $comment->avis = $request->get('avis');
+        $comment->save();
+        
+        return redirect()->route('home');
     }
 }
