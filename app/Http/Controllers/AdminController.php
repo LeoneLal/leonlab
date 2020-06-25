@@ -15,6 +15,10 @@ use Carbon\Carbon;
 
 class AdminController extends Controller
 {
+
+    /**
+     * Index page of the admin panel
+     */
     public function index(){
         $nb_sales = Ligne::all()->count();
         $nb_users = User::all()->count();
@@ -23,7 +27,10 @@ class AdminController extends Controller
         $ca = Fiche::sum('prix_total');
         $month_ca = Fiche::where( 'created_at', '>', Carbon::now()->subDays(30))->sum('prix_total');
         $weeks_ca = Fiche::where( 'created_at', '>', Carbon::now()->subDays(30))->sum('prix_total');
-        
+
+        /**
+         * Chart creation
+         */
         $chart = new SampleChart;
         $chart->title('Graphique global');
         $chart->labels(['Ventes totales', "Nombre de membres", 'Nombre de jeux']);
@@ -37,22 +44,26 @@ class AdminController extends Controller
         
     }
 
+     /**
+     * Game page of the admin panel
+     */
     public function games(){
         $games = Jeu::all();
 
-        
-
+        /**
+         * Opinions grouped by member
+         */
         $games_opinions = Comment::selectRaw('AVG(note) note, jeu_id')
         ->groupBy('jeu_id')
         ->get();
-        
-        //$note = number_format($notes, 2);
 
         $month_sales = Ligne::where( 'created_at', '>', Carbon::now()->subDays(30))->count();
         $sales = Ligne::all()->count();
         $weeks_sales = Ligne::where( 'created_at', '>', Carbon::now()->subDays(7))->count();
         
-        
+        /**
+         * Chart creation
+         */
         $games_chart = new SampleChart;
         $games_chart->title('Ventes');
         $games_chart->labels(['Ventes des 7 derniers jours', 'Ventes des 30 derniers jours', 'Ventes totales']);
@@ -66,12 +77,17 @@ class AdminController extends Controller
             return redirect()->route('jeux.index');
     }
 
+     /**
+     * Console page of the admin panel
+     */
     public function consoles(){
         $consoles = Console::all();
         return view('admin.consoles', compact('consoles'));
 
     }
-
+    /**
+     * Members page of the admin panel
+     */
     public function members(){
         $members = User::all();
 
@@ -92,6 +108,9 @@ class AdminController extends Controller
             return redirect()->route('jeux.index', compact('games'));
     }
 
+    /**
+     * Opinions page of the admin panel
+     */
     public function opinion(){
 
         $games_opinions = Comment::with('Game')->with('User')->orderBy('jeu_id')->get();

@@ -8,8 +8,11 @@ use App\Jeu;
 use App\Console;
 use App\Comment;
 
-class JeuxController extends Controller
+class GameController extends Controller
 {
+    /**
+     * Home page of the website
+     */
     public function index(){
         $consoles = Console::all();
         $jeux = Jeu::all();
@@ -17,6 +20,9 @@ class JeuxController extends Controller
         return view('index', compact('consoles', 'jeux'), ['jeux' => $jeux]);
     }
 
+    /**
+     * Search bar function
+     */
     public function search()
     {
         request()->validate([
@@ -31,6 +37,9 @@ class JeuxController extends Controller
         return view('jeux.search')->with('jeux', $products);
     }
 
+    /**
+     * Create game view
+     */
     public function create(){
         $consoles = Console::all();
         if( \Auth::user()->role == 1)
@@ -39,6 +48,9 @@ class JeuxController extends Controller
             return redirect()->route('jeux.index');
     }
 
+    /**
+     * Create new game in the database
+     */
     public function store(Request $request)
     {
         $game = new Jeu();
@@ -52,6 +64,9 @@ class JeuxController extends Controller
         return redirect()->route('admin.games');
     }
 
+    /**
+     * Game description page
+     */
     public function show($jeuId)
     {
         
@@ -67,6 +82,9 @@ class JeuxController extends Controller
         return view('jeux.show', compact('jeu', 'console', 'comments', 'note'));
     }
 
+    /**
+     * Update game page
+     */
     public function edit($gameId){
 
         $consoles = Console::all();
@@ -78,6 +96,9 @@ class JeuxController extends Controller
             return redirect()->route('jeux.index');
     }
 
+    /**
+     * Update the game in the database
+     */
     public function update(Request $request, $gameId)
     {
         $game = Jeu::where('id', $gameId)->first();

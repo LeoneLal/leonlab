@@ -17,9 +17,7 @@ use PDF;
 class CartController extends Controller
 {
     /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
+     * Cart view
      */
     public function index()
     {
@@ -28,10 +26,7 @@ class CartController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * Add a game to the cart
      */
     public function store(Request $request)
     {
@@ -47,20 +42,14 @@ class CartController extends Controller
         $product = Jeu::find($request->product_id);
 
         Cart::add($product->id, $product->nom, 1, $product->prix)
-            ->associate('App\Jeu');
-
-        
+            ->associate('App\Jeu');        
 
         return redirect()->route('jeux.index')->with('success', 'Le jeu est ajouté au panier !');
         
     }
 
-
     /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * Remove game from cart
      */
     public function destroy($rowId)
     {
@@ -78,7 +67,7 @@ class CartController extends Controller
         
         $user_id = \Auth::user()->id;
         /**
-         * Add of the cart to the database only if it's not empty
+         * Add cart to the database only if it's not empty
          */
         if( Cart::count() > 0)
         {
@@ -142,8 +131,6 @@ class CartController extends Controller
             $user->solde = $prec_solde - Cart::subtotal();
             $user->save(); 
 
-            
-    
             Cart::destroy();
             return redirect()->route('home')->with('success', 'Commande validée.');
 

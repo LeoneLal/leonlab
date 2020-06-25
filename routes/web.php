@@ -55,14 +55,14 @@ Route::get('/consoles/{id}/delete', 'ConsolesController@delete')->name('consoles
 /**
  * Games Routes
  */
-Route::get('/search', 'JeuxController@search')->name('jeux.search');
-Route::get('/', 'JeuxController@index')->name('jeux.index');
-Route::get('/jeux/create', 'JeuxController@create')->name('jeux.create');
-Route::post('/jeux/store', 'JeuxController@store')->name('jeux.store');
-Route::get('/jeux/{id}/show', 'JeuxController@show')->name('jeux.show');
-Route::get('/jeux/{id}/edit', 'JeuxController@edit')->name('jeux.edit');
-Route::put('/jeux/{id}/update', 'JeuxController@update')->name('jeux.update');
-Route::get('/jeux/{id}/delete', 'JeuxController@delete')->name('jeux.delete');
+Route::get('/search', 'GameController@search')->name('jeux.search');
+Route::get('/', 'GameController@index')->name('jeux.index');
+Route::get('/jeux/create', 'GameController@create')->name('jeux.create');
+Route::post('/jeux/store', 'GameController@store')->name('jeux.store');
+Route::get('/jeux/{id}/show', 'GameController@show')->name('jeux.show');
+Route::get('/jeux/{id}/edit', 'GameController@edit')->name('jeux.edit');
+Route::put('/jeux/{id}/update', 'GameController@update')->name('jeux.update');
+Route::get('/jeux/{id}/delete', 'GameController@delete')->name('jeux.delete');
 
 /**
  * Cart routes

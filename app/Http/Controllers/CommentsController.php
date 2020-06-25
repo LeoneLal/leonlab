@@ -10,9 +10,15 @@ use App\Ligne;
 
 class CommentsController extends Controller
 {
+    /**
+     * Comment creation
+     */
     public function create($gameId){
         $game = Jeu::where('id', $gameId)->first();
 
+        /**
+         * Checking if the member has already written a comment on this game
+         */
         $existing_comment = Comment::selectRaw('user_id , jeu_id')
         ->where('user_id', \Auth::user()->id)
         ->get();
@@ -36,7 +42,9 @@ class CommentsController extends Controller
 
         
     }
-    
+    /**
+     * Sending comment to the database
+     */
     public function store(Request $request)
     {
 
@@ -50,6 +58,9 @@ class CommentsController extends Controller
         return redirect()->route('home');
     }
 
+    /**
+     * Edit comment function
+     */
     public function edit($gameId){
         $comment = Comment::where('user_id', \Auth::user()->id)
         ->where('jeu_id', $gameId)
@@ -58,6 +69,9 @@ class CommentsController extends Controller
         return view('comments.edit', compact('comment'));
     }
 
+    /**
+     * Updating comment in the database
+     */
     public function update(Request $request, $commentId){
 
         $comment =  Comment::where('id', $commentId)->first();

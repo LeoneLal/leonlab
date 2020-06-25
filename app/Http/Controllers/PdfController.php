@@ -11,6 +11,9 @@ use PDF;
 
 class PdfController extends Controller
 {
+    /**
+     * PDF view
+     */
     public function receipt(){
         $username = \Auth::user()->name;
         $mytime = Carbon::now();
@@ -19,6 +22,9 @@ class PdfController extends Controller
         return view('pdf.bill', compact('mytime', 'username', 'number'));
     }
 
+    /**
+     * Print a PDF
+     */
     public function print(){
         $username = \Auth::user()->name;
         $mytime = Carbon::now();

@@ -23,12 +23,13 @@ class HomeController extends Controller
     }
 
     /**
-     * Show the application dashboard.
-     *
-     * @return \Illuminate\Contracts\Support\Renderable
+     * Return home view
      */
     public function index()
     {
+        /**
+         * Checking if a comment already exist
+         */
         $existing_comment = Comment::selectRaw('user_id , jeu_id')
         ->where('user_id', \Auth::user()->id)
         ->get(); 

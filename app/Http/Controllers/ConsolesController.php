@@ -9,6 +9,9 @@ use App\Console;
 
 class ConsolesController extends Controller
 {
+    /**
+     * Sorting games by consoles
+     */
     public function search($consoleId){
         $consoles = Console::all();
         $jeux = DB::table('jeux')->where('console_id', $consoleId)->get();
@@ -16,10 +19,16 @@ class ConsolesController extends Controller
         return view('consoles.search',compact('jeux', 'consoles'))->with('jeux', $jeux);
     }
     
+    /**
+     * Creation console view
+     */
     public function create(){
         return view('consoles.create');
     }
 
+    /**
+     * Add console in the database
+     */
     public function store(Request $request){
 
         $console = new Console();
@@ -33,12 +42,18 @@ class ConsolesController extends Controller
 
     }
 
+    /**
+     * Edit console view
+     */
     public function edit($consoleId){
 
         $console = Console::where('id', $consoleId)->first();
         return view('consoles.edit', compact('console'));
     }
 
+    /**
+     * Update console in the database
+     */
     public function update(Request $request, $consoleId)
     {
         $console = Console::where('id', $consoleId)->first();
