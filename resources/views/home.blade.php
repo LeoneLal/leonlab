@@ -44,7 +44,6 @@
   <h2>Achats</h2>
   <div class="jeux">
     @foreach( $line as $game)
-
     <div class="jeu">
       <div class="picture">
         <img src="images/jeux/{{$game->Game->slug}}" alt="Rust" />
@@ -52,7 +51,26 @@
       <div class="infos">
         <div class="titre">
           <h3>{{$game->Game->nom}}</h3>
-          <a href="{{ route('comments.create', $game->jeu_id) }}">Rédiger un avis</a>
+
+          @foreach($existing_comment as $comment)
+            @if($comment->jeu_id == $game->jeu_id)
+                <p class="hidden">{{ $statut = true }}</p> 
+                @break
+            
+            @else
+                {{ $statut = false }}
+            
+            @endif
+          
+          @endforeach
+
+          @if($statut == false)
+            <a href="{{ route('comments.create', $game->jeu_id) }}">Rédiger un avis</a>
+
+            @else
+            <a href="{{ route('comments.edit', $game->jeu_id) }}">Modifier l'avis</a>
+          @endif
+
         </div>
         <div class="date">
           <p>{{ \Carbon\Carbon::parse($game->Card->created_at)->format('d/m/Y')}}</p>
