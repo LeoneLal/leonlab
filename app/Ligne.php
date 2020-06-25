@@ -8,7 +8,8 @@ class Ligne extends Model
 {
     public $timestamps = false;
 
-    protected $name = 'lignes';
+	protected $name = 'lignes';
+	
 	protected $fillable = [
 		'id',
 		'fiche_id',

@@ -8,7 +8,8 @@ class Fiche extends Model
 {
     public $timestamps = false;
 
-    protected $name = 'fiches';
+	protected $name = 'fiches';
+	
 	protected $fillable = [
 		'id',
 		'prix_total',

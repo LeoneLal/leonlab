@@ -6,6 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Console extends Model
 {
+    public $timestamps = false;
+
     protected $table="consoles";
 
     protected $fillable=[
@@ -13,8 +15,6 @@ class Console extends Model
         'console',
         'slug',
     ];
-
-    public $timestamps = false;
     
     public function jeu()
     {
