@@ -78,6 +78,8 @@ Route::get('/videpanier', function(){ Cart::destroy(); });
  */
 Route::get('/comments/{id}/create', 'CommentsController@create')->name('comments.create');
 Route::post('/comments/store', 'CommentsController@store')->name('comments.store');
+Route::get('/comments/{id}/edit', 'CommentsController@edit')->name('comments.edit');
+Route::put('/comments/{id}/update', 'CommentsController@update')->name('comments.update');
 
 /**
  * Route receipt
