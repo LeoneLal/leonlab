@@ -1,4 +1,4 @@
-**LéonLab**
+# **LéonLab**
 
 LeonLab is a website project of video game store.
 Users can buy video games and they will receive a mail with access code and a bill 
@@ -39,7 +39,7 @@ To realise this project we used Laravel and
 - Laravel ShoppingCart Library
 
 
-## Auteurs
+## Authors
 
 
 - **Auriane Labille**  _alias_  [@Fanghienne](https://github.com/Fanghienne)
